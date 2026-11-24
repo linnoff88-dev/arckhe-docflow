@@ -6,10 +6,10 @@ CapCut -> YouTube) sem passos manuais:
 
   roteiro   as 6 respostas do tema.yaml viram roteiro + prompts (Codex, pela assinatura)
   gerar     imagens 001..N e clipes 001..N pelo motor escolhido (flow | agnes)
-  narrar    uma fala por cena (inemavox, local) -> encaixa no tempo de cada cena
+  narrar    uma fala por cena (ARCKHÉvox, local) -> encaixa no tempo de cada cena
   montar    ffmpeg faz o papel do CapCut: tempo, transição, fades, ambiente, música
   estatica  troca o clipe de IA de uma cena pela imagem com zoom lento (--cenas 6)
-  descricao gera a descrição com o rodapé (projeto, APIs, INEMA.CLUB); --video URL aplica
+  descricao gera a descrição com o rodapé (projeto, APIs, ARCKHÉ AI); --video URL aplica
   publicar  yt-pubx (dry-run por padrão; --enviar sobe de verdade)
   tudo      roteiro -> gerar -> narrar -> montar (para antes de publicar)
 
@@ -52,7 +52,7 @@ ESTILOS = {
     'historia': {
         'resumo': 'Explicativo no estilo dos canais de divulgação: gancho de cena com paradoxo, '
                   'promessa, analogia, prova na tela (print grifado), grafismos animados, mapas ao vivo '
-                  'e b-roll de cinema (Agnes); corte a cada 4–5 s.',
+                  'e b-roll de cARCKHÉ (Agnes); corte a cada 4–5 s.',
         'exemplo': '~/projetos/output/docflow/elnino-historia/final-sem-apresentador.mp4 (piloto)',
         'tema': {'motor': 'historia', 'ritmo': 'dinamico', 'formato': '16:9', 'duracao_cena': 30}},
     'historia-apresentador': {
@@ -205,7 +205,7 @@ def cmd_narrar(t, d):
         from motores import historia
         return historia.Montador(plano(d), d, log).narrar()
     sys.path.insert(0, str(Path.home() / 'projetos/videos-agnes'))
-    import pipeline as va   # narrar() do videos-agnes: inemavox chatterbox com voz de referência
+    import pipeline as va   # narrar() do videos-agnes: ARCKHÉvox chatterbox com voz de referência
     p = plano(d)
     for c in p['cenas']:
         dest = d / f'narracao/{c["n"]:03d}.wav'
@@ -213,21 +213,21 @@ def cmd_narrar(t, d):
             continue
         s = va.narrar(str(dest), c['narracao'], voz=t.get('voz', 'nei'))
         if not s:
-            sys.exit(f'narrar: cena {c["n"]} falhou (inemavox :8010 no ar?)')
+            sys.exit(f'narrar: cena {c["n"]} falhou (ARCKHÉvox :8010 no ar?)')
         log(f'  narração {c["n"]:03d}: {s:.1f}s')
     log('narrar: ok')
 
 
 # ---------------------------------------------------------------- 4. montar
-CTA = 999   # número da cena de encerramento (CTA INEMA.CLUB), depois da última cena
+CTA = 999   # número da cena de encerramento (CTA ARCKHÉ AI), depois da última cena
 CTA_FALA = ('Quer aprender a criar vídeos assim com inteligência artificial? '
-            'Acesse inema ponto club. É gratuito.')
-CTA_TEXTO = ('INEMA.CLUB', 'Cursos, guias e projetos de IA. Grátis.')
+            'Acesse ARCKHÉ ponto club. É gratuito.')
+CTA_TEXTO = ('ARCKHÉ AI', 'Cursos, guias e projetos de IA. Grátis.')
 FONTE = Path.home() / '.local/share/fonts/Montserrat-ExtraBold.ttf'
 
 
 def cmd_cta(t, d, ultima):
-    """Cena final: a última imagem desfocada e escura, INEMA.CLUB no centro e a voz chamando.
+    """Cena final: a última imagem desfocada e escura, ARCKHÉ AI no centro e a voz chamando.
     Desliga com `cta: false` no tema; `cta_fala` troca a frase."""
     from montagem import RES
     W, H = RES.get(t['formato'], RES['16:9'])
@@ -236,7 +236,7 @@ def cmd_cta(t, d, ultima):
         sys.path.insert(0, str(Path.home() / 'projetos/videos-agnes'))
         import pipeline as va
         if not va.narrar(str(wav), t.get('cta_fala', CTA_FALA), voz=t.get('voz', 'nei')):
-            sys.exit('cta: narração falhou (inemavox :8010 no ar?)')
+            sys.exit('cta: narração falhou (ARCKHÉvox :8010 no ar?)')
     if not mp4.exists():
         marca, linha = CTA_TEXTO
         (d / 'tmp').mkdir(exist_ok=True)
@@ -256,7 +256,7 @@ def cmd_cta(t, d, ultima):
                         '-i', os.path.expanduser(t.get('cta_imagem') or str(d / f'imagens/{ultima:03d}.png')),
                         '-vf', sh_vf, '-t', str(seg),
                         '-c:v', 'libx264', '-pix_fmt', 'yuv420p', '-y', str(mp4)], check=True)
-    log('  cta: INEMA.CLUB no fim')
+    log('  cta: ARCKHÉ AI no fim')
 
 
 def transicao(t):
@@ -288,7 +288,7 @@ MOTORES = {
     'flow': ['Imagens e vídeos: Google Flow (agente), automatizado no navegador'],
     'reais': ['Imagens: mapas, satélite e fotos reais (créditos abaixo), sem IA',
               'Gráficos: matplotlib, com os dados das fontes citadas'],
-    'historia': ['Cenas de cinema: Agnes AI (imagem e imagem → vídeo), por API',
+    'historia': ['Cenas de cARCKHÉ: Agnes AI (imagem e imagem → vídeo), por API',
                  'Mapas animados ao vivo: earth.nullschool.net (Cameron Beccario), dados NOAA',
                  'Prints de páginas oficiais com o trecho grifado (fonte e data na tela)',
                  'Grafismos animados: Python/PIL, com os dados das fontes citadas'],
@@ -303,7 +303,7 @@ def creditos_imagens(p, t):
 
 
 def descricao(p, t):
-    """Descrição do YouTube = texto do roteiro + como foi feito (projeto, APIs) + INEMA.CLUB."""
+    """Descrição do YouTube = texto do roteiro + como foi feito (projeto, APIs) + ARCKHÉ AI."""
     musica = Path(os.path.expanduser(t.get('musica', ''))).stem
     m = re.match(r'freesound_(\d+)_(.*)', musica)
     credito = f'"{m.group(2).replace("_", " ")}" (Freesound #{m.group(1)})' if m else musica
@@ -311,20 +311,20 @@ def descricao(p, t):
               *(['🔎 Para pesquisar', *('• ' + x for x in t['links']), ''] if t.get('links') else []),
               *([f'📌 Fontes: {t["fontes"].strip()}', ''] if t.get('fontes') else []),
               '🛠️ Como este vídeo foi feito',
-              'Produzido de ponta a ponta pelo docflow, projeto aberto do INEMA que transforma '
-              'um tema em documentário curto narrado: https://github.com/inematds/docflow',
+              'Produzido de ponta a ponta pelo docflow, projeto aberto do ARCKHÉ que transforma '
+              'um tema em documentário curto narrado: https://github.com/linnoff88-dev/docflow',
               '• Roteiro, texto da narração e prompts: Codex (OpenAI), pela assinatura',
               *('• ' + x for x in MOTORES.get(t.get('motor', 'agnes'), [])),
               *(['• Fotos refeitas por IA a partir das originais: Agnes AI (agnes-image-2.1-flash, '
                  'imagem → imagem), por API; aparecem marcadas "Ilustração IA"'] if t.get('refazer_ia') else []),
-              f'• Narração: inemavox, TTS local (chatterbox, voz {t.get("voz", "nei")})',
+              f'• Narração: ARCKHÉvox, TTS local (chatterbox, voz {t.get("voz", "nei")})',
               *([f'• Música: {credito}'] if musica else []),
               '• Montagem: ffmpeg, local',
-              '• Publicação: YouTube Data API, via yt-pubx (https://github.com/inematds/yt-pubx)',
+              '• Publicação: YouTube Data API, via yt-pubx (https://github.com/linnoff88-dev/yt-pubx)',
               *creditos_imagens(p, t),
               '',
-              '📚 INEMA.CLUB: plataforma de educação gratuita, com cursos, guias e projetos '
-              'abertos de inteligência artificial. Acesse: https://inema.club']
+              '📚 ARCKHÉ AI: plataforma de educação gratuita, com cursos, guias e projetos '
+              'abertos de inteligência artificial. Acesse: https://ARCKHÉ AI']
     return '\n'.join(linhas)
 
 

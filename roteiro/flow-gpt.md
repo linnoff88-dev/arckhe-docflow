@@ -22,7 +22,7 @@ Recebe as 6 respostas abaixo e devolve TUDO de uma vez, sem perguntar nada.
   ("mil novecentos e trinta e nove", "três mil anos"), sem siglas, sem parênteses.
 - Fatos corretos e conservadores; nada de exagero inventado. Previsão é previsão: diga "deve", "pode", "a previsão indica", nunca como fato consumado.
 - prompt_imagem e prompt_video em INGLÊS (o gerador recusa português).
-  prompt_imagem: um quadro fixo, {estilo}, composição cinematográfica {formato}, sem texto escrito,
+  prompt_imagem: um quadro fixo, {estilo}, composição cARCKHÉtográfica {formato}, sem texto escrito,
   sem logotipos, sem rostos de pessoas reais famosas em close; nada de violência gráfica.
   prompt_video: só o MOVIMENTO a partir daquela imagem (câmera + ação sutil), uma frase.
 - direcao_voz: uma linha (gênero, ritmo, tom).

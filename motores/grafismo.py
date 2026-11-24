@@ -301,7 +301,7 @@ def oceano(saida, segundos, W, H, de=0.0, ate=1.0, esquerda='ÁSIA', direita='AM
 
 
 # ---------------------------------------------------------------- CTA
-def cta(saida, segundos, W, H, marca='INEMA.CLUB', linha='Cursos, guias e projetos de IA. Grátis.'):
+def cta(saida, segundos, W, H, marca='ARCKHÉ AI', linha='Cursos, guias e projetos de IA. Grátis.'):
     out, n = Saida(saida, W, H), int(segundos * FPS)
     for f in range(n):
         im = fundo(W, H); d = ImageDraw.Draw(im); grade(d, W, H, f)

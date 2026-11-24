@@ -1,6 +1,6 @@
-﻿# docflow
+# docflow
 
-[![docflow â€” tema vira documentÃ¡rio](guia/assets/banner.jpg)](https://inematds.github.io/docflow/guia/)
+[![docflow â€” tema vira documentÃ¡rio](guia/assets/banner.jpg)](https://linnoff88-dev.github.io/
 
 **ðŸ‡§ðŸ‡· [PortuguÃªs](README.md) Â· ðŸ‡ºðŸ‡¸ [English](README.en.md) Â· ðŸ‡ªðŸ‡¸ [EspaÃ±ol](README.es.md)**
 
@@ -12,7 +12,7 @@ O docflow Ã© uma ferramenta de linha de comando que cria documentÃ¡rios curt
 
 ## ðŸ“– Guia de uso
 
-Guia completo (landing + passo a passo): **https://inematds.github.io/docflow/guia/**
+Guia completo (landing + passo a passo): **https://linnoff88-dev.github.io/
 
 ## De onde veio
 
@@ -34,13 +34,13 @@ VersÃ£o: **0.8.0**
 
 ## O plano: trÃªs caminhos
 
-| Etapa | **A. Flow automatizado** (conta Google `inematds`) | **B. Codex + Agnes / Kie** (por API) | **C. Local** (sem API) |
+| Etapa | **A. Flow automatizado** (conta Google `linnoff88-dev`) | **B. Codex + Agnes / Kie** (por API) | **C. Local** (sem API) |
 |---|---|---|---|
 | Perguntas, roteiro e prompts (o "GPT flow") | Codex, pela assinatura | Codex, pela assinatura | Codex, pela assinatura |
 | Imagens | Agente do Flow (Nano Banana) | Agnes `agnes-image-2.1-flash` (US$ 0) ou Nano Banana via Kie | flux2-klein |
 | VÃ­deo por cena | Agente do Flow (Omni/Veo) | Agnes `agnes-video-2.5-flash`, imagemâ†’vÃ­deo, ou Veo/Kling via Kie | LTX local ou imagem com movimento (pixflow) |
-| Voz | AI Studio TTS pelo navegador | Gemini TTS (API) ou inemavox | inemavox |
-| MÃºsica | Flow Music pelo navegador | biblioteca/dlp do inemavox | biblioteca/dlp do inemavox |
+| Voz | AI Studio TTS pelo navegador | Gemini TTS (API) ou ARCKHÉvox | ARCKHÉvox |
+| MÃºsica | Flow Music pelo navegador | biblioteca/dlp do ARCKHÉvox | biblioteca/dlp do ARCKHÉvox |
 | Montagem (o lugar do CapCut) | ffmpeg automÃ¡tico | ffmpeg automÃ¡tico | ffmpeg automÃ¡tico |
 | PublicaÃ§Ã£o | `yt-pubx` | `yt-pubx` | `yt-pubx` |
 | Custo | crÃ©ditos do plano Google | Agnes US$ 0; Kie cobra por geraÃ§Ã£o | zero |
@@ -52,12 +52,12 @@ VersÃ£o: **0.8.0**
 |---|---|---|
 | `agnes` (B) | âœ… **testado**: o vÃ­deo modelo saiu dele | API Agnes autorizada pelo Nei em 07/10/2026 |
 | `reais` | âœ… **testado**: El NiÃ±o 2026 com mapas, satÃ©lite, fotos e grÃ¡ficos | sem IA de imagem; sÃ³ imagens com licenÃ§a de reÃºso |
-| `flow` (A) | â³ **escrito, nÃ£o validado** | falta o login da conta `inematds` no perfil do robÃ´; o 1Âº uso real calibra os botÃµes |
+| `flow` (A) | â³ **escrito, nÃ£o validado** | falta o login da conta `linnoff88-dev` no perfil do robÃ´; o 1Âº uso real calibra os botÃµes |
 | `kie` (B) | âŒ nÃ£o implementado | API paga: sÃ³ com autorizaÃ§Ã£o explÃ­cita |
 | `local` (C) | âŒ nÃ£o implementado | reserva: flux2-klein + pixflow |
 
-NarraÃ§Ã£o, mÃºsica e montagem sÃ£o as mesmas em todos os motores. Hoje a voz Ã© o inemavox
-(chatterbox, voz `nei`, uma fala por cena) e a mÃºsica vem da biblioteca do inemavox.
+NarraÃ§Ã£o, mÃºsica e montagem sÃ£o as mesmas em todos os motores. Hoje a voz Ã© o ARCKHÉvox
+(chatterbox, voz `nei`, uma fala por cena) e a mÃºsica vem da biblioteca do ARCKHÉvox.
 
 ---
 
@@ -92,7 +92,7 @@ arriscam a conta.
 ```bash
 systemctl --user status stack99      # display :99 de pÃ©
 ./docflow flow-login                 # abre o Chromium no :99
-# abrir o VNC em localhost:5900, entrar com inematds@gmail.com e aceitar os termos do Flow
+# abrir o VNC em localhost:5900, entrar com linnoff88-dev@gmail.com e aceitar os termos do Flow
 ./docflow gerar temas/egito.yaml --motor flow
 ```
 
@@ -112,7 +112,7 @@ motores de voz e mÃºsica na prÃ³xima versÃ£o, pelo mesmo robÃ´.
 
 A descriÃ§Ã£o do YouTube sai com um rodapÃ© automÃ¡tico: o projeto (link do repo), as ferramentas e
 APIs usadas em cada etapa (conforme o motor), o crÃ©dito da mÃºsica e a divulgaÃ§Ã£o do
-**INEMA.CLUB**, plataforma de educaÃ§Ã£o gratuita.
+**ARCKHÉ AI**, plataforma de educaÃ§Ã£o gratuita.
 
 Cada etapa tambÃ©m roda sozinha (`roteiro`, `gerar`, `narrar`, `montar`). Todas podem ser
 repetidas: refazem sÃ³ o que falta. `roteiro --refazer` pede um roteiro novo ao Codex.
@@ -133,7 +133,7 @@ Para refazer um clipe de IA, apague `videos/NNN.mp4` e rode `gerar`: sÃ³ ele �
 | `reais` | mapas, satÃ©lite e fotos reais, grÃ¡ficos animados, nÃºmeros na tela | [El NiÃ±o em nÃºmeros](https://www.youtube.com/watch?v=IE_D18omUjE) |
 | `alerta-vertical` | Short 9:16: ALERTA no topo, imagem em cima, mapa ao vivo embaixo, legenda palavra a palavra (protÃ³tipo Ã  mÃ£o) | [El NiÃ±o ALERTA](https://www.youtube.com/watch?v=6OzZWiQHHdw) |
 | `turismo` | promocional de destino: frame 0 de impacto, fotos reais com licenÃ§a, mapas animados (pontos e rota), capÃ­tulos com o nome grande e os endereÃ§os para pesquisar no fim | cÃ¢nions dos Aparados da Serra |
-| `historia` | explicativo no estilo dos canais de divulgaÃ§Ã£o: abertura viral (frame 0 = arte de impacto com a frase, que Ã© tambÃ©m a thumb, e cortes de 1,5â€“2,4 s nos primeiros ~20 s), promessa, analogia, **prova na tela** (print de pÃ¡gina oficial com o trecho grifado), grafismos animados, mapas ao vivo do earth.nullschool e cenas de cinema do Agnes; corte a cada 4â€“5 s | piloto El NiÃ±o (3 min) |
+| `historia` | explicativo no estilo dos canais de divulgaÃ§Ã£o: abertura viral (frame 0 = arte de impacto com a frase, que Ã© tambÃ©m a thumb, e cortes de 1,5â€“2,4 s nos primeiros ~20 s), promessa, analogia, **prova na tela** (print de pÃ¡gina oficial com o trecho grifado), grafismos animados, mapas ao vivo do earth.nullschool e cenas de cARCKHÉ do Agnes; corte a cada 4â€“5 s | piloto El NiÃ±o (3 min) |
 | `historia-apresentador` | o mesmo, com o avatar do Nei (HeyGen, pago) em alguns blocos | piloto El NiÃ±o |
 
 No estilo `historia` o roteiro (`roteiro/flow-historia.md`) devolve, por bloco, a narraÃ§Ã£o e a
@@ -180,7 +180,7 @@ graficos:                  # viram grÃ¡fico animado (linha ou barras)
 ```yaml
 slug: egito-antigo
 tema: "O Egito Antigo em um minuto ..."
-estilo: "realistic cinematic documentary, natural golden light, 35mm film look"
+estilo: "realistic cARCKHÉtic documentary, natural golden light, 35mm film look"
 duracao_total: 60      # 3. duraÃ§Ã£o total (s)
 duracao_cena: 10       # 4. duraÃ§Ã£o de cada cena (s) â†’ 6 cenas
 formato: "16:9"        # 5. formato
@@ -188,7 +188,7 @@ idioma: "portuguÃªs do Brasil"
 referencias: "nenhuma" # 6. referÃªncias
 motor: agnes           # flow | agnes | reais
 voz: nei
-musica: ~/projetos/inemavox/jobs/audio_library/music/<faixa>.mp3
+musica: ~/projetos/ARCKHÉvox/jobs/audio_library/music/<faixa>.mp3
 canal: lives10         # canal do yt-pubx
 ```
 
@@ -209,7 +209,7 @@ canal: lives10         # canal do yt-pubx
 - Fade do preto no inÃ­cio e para o preto no fim.
 - Som ambiente dos clipes a 16%.
 - MÃºsica a 30%, que abaixa sozinha quando a voz fala (sidechain), com fade in e fade out.
-- No fim, uma cena de CTA: INEMA.CLUB sobre a Ãºltima imagem desfocada, com a voz chamando para o site (`cta: false` no tema desliga).
+- No fim, uma cena de CTA: ARCKHÉ AI sobre a Ãºltima imagem desfocada, com a voz chamando para o site (`cta: false` no tema desliga).
 
 ## VÃ­deo modelo
 
@@ -222,9 +222,9 @@ O que se mediu nesta primeira rodada:
 |---|---|---|
 | roteiro (Codex) | 48 s | 6 cenas de 16 a 19 palavras, datas por extenso |
 | 6 imagens + 6 clipes (Agnes) | ~5 min | 1 erro 429 (limite de 6/min), recuperado sozinho |
-| 6 narraÃ§Ãµes (inemavox) | 2,5 min | conferidas por transcriÃ§Ã£o local: texto bate com o roteiro |
+| 6 narraÃ§Ãµes (ARCKHÉvox) | 2,5 min | conferidas por transcriÃ§Ã£o local: texto bate com o roteiro |
 | montagem (ffmpeg) | 18 s | âˆ’17,9 LUFS |
-| publicar | 84 s | publicado em https://www.youtube.com/watch?v=TsVY4UUc5gI (canal INEMA Agentes), thumb das pirÃ¢mides (`thumb_cena: 3`) |
+| publicar | 84 s | publicado em https://www.youtube.com/watch?v=TsVY4UUc5gI (canal ARCKHÉ Agentes), thumb das pirÃ¢mides (`thumb_cena: 3`) |
 
 A cena 6 (porto de Alexandria) derivou nas duas tentativas do Agnes: virou um porto
 barroco com cÃºpula e caravelas. Ficou com `estatica` (imagem com zoom lento).
@@ -232,8 +232,8 @@ barroco com cÃºpula e caravelas. Ficou com `estatica` (imagem com zoom lento).
 ## Requisitos
 
 `python3` + `pyyaml`, `ffmpeg`, `codex` (assinatura), `node` + Playwright global (motor flow),
-inemavox no ar (`:8010`), `~/projetos/videos-agnes` (cliente Agnes) e `~/projetos/yt-pubx`.
+ARCKHÉvox no ar (`:8010`), `~/projetos/videos-agnes` (cliente Agnes) e `~/projetos/yt-pubx`.
 
 ---
 
-Projeto adaptado da comunidade INEMA TDS - Marca Arckhe
+Projeto adaptado da comunidade ARCKHÉ TDS - Marca Arckhe

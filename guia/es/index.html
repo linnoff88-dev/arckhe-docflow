@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>docflow — un tema se convierte en documental narrado en YouTube</title>
 <meta name="description" content="docflow convierte un tema en un documental corto narrado y lo publica en YouTube: guion en Codex, imágenes y video con Google Flow o con la API de Agnes, narración local, montaje en ffmpeg y subida con yt-pubx.">
-<link rel="alternate" hreflang="pt-BR" href="https://inematds.github.io/docflow/guia/">
-<link rel="alternate" hreflang="en" href="https://inematds.github.io/docflow/guia/en/">
-<link rel="alternate" hreflang="es" href="https://inematds.github.io/docflow/guia/es/">
+<link rel="alternate" hreflang="pt-BR" href="https://linnoff88-dev.github.io/
+<link rel="alternate" hreflang="en" href="https://linnoff88-dev.github.io/
+<link rel="alternate" hreflang="es" href="https://linnoff88-dev.github.io/
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -39,8 +39,8 @@
   nav .brand{display:flex;align-items:center;gap:8px;font-family:Sora;font-weight:800;letter-spacing:-.02em;color:var(--amb)}
   nav .brand .emoji{font-size:1.25rem}
   nav .sep{color:var(--mut);opacity:.45}
-  nav .inema{color:var(--sky);font-weight:600;font-size:.88rem;font-family:Sora}
-  nav .inema:hover{filter:brightness(1.15)}
+  nav .ARCKHÉ{color:var(--sky);font-weight:600;font-size:.88rem;font-family:Sora}
+  nav .ARCKHÉ:hover{filter:brightness(1.15)}
   nav .pro{color:var(--pro);font-weight:600;font-size:.88rem;font-family:Sora}
   nav .pro:hover{filter:brightness(1.15)}
   nav .clubpro{display:inline-flex;align-items:center;gap:6px}
@@ -107,9 +107,9 @@
   <a class="brand" href="#top"><span class="emoji">🎬</span> docflow</a>
   <span class="sep">|</span>
   <span class="clubpro">
-    <a class="inema" href="https://inema.club" target="_blank" rel="noopener">INEMA.CLUB</a>
+    <a class="ARCKHÉ" href="https://ARCKHÉ AI" target="_blank" rel="noopener">ARCKHÉ AI</a>
     <span class="sep">-</span>
-    <a class="pro" href="https://inema.pro" target="_blank" rel="noopener">PRO</a>
+    <a class="pro" href="https://ARCKHÉ.pro" target="_blank" rel="noopener">PRO</a>
   </span>
   <div class="links">
     <a class="sec" href="#oque">Qué es</a>
@@ -119,7 +119,7 @@
     <a class="sec" href="#roadmap">Roadmap</a>
     <span class="lang"><a href="../">PT</a><a href="../en/">EN</a><a class="on" href="./">ES</a></span>
     <button class="tgl" id="themeToggle" aria-label="Cambiar tema" title="Cambiar tema">🌙</button>
-    <a class="btn" href="https://github.com/inematds/docflow" target="_blank" rel="noopener">GitHub</a>
+    <a class="btn" href="https://github.com/linnoff88-dev/docflow" target="_blank" rel="noopener">GitHub</a>
   </div>
 </div></nav>
 
@@ -132,7 +132,7 @@
       <p class="lead">Tú escribes el tema en 6 líneas. docflow hace el guion, las imágenes, los videos, la narración, el montaje y la publicación.</p>
       <div class="cta">
         <a class="btn" href="#guia">Empezar la guía</a>
-        <a class="btn ghost" href="https://github.com/inematds/docflow" target="_blank" rel="noopener">Ver en GitHub</a>
+        <a class="btn ghost" href="https://github.com/linnoff88-dev/docflow" target="_blank" rel="noopener">Ver en GitHub</a>
       </div>
     </div>
     <figure><img src="../assets/banner-es.jpg" alt="Banner de docflow: un tema se convierte en documental"></figure>
@@ -164,7 +164,7 @@
     <span>tema.yaml</span><span class="arr">→</span>
     <span>guion (Codex)</span><span class="arr">→</span>
     <span>generar (Flow o Agnes)</span><span class="arr">→</span>
-    <span>narrar (inemavox)</span><span class="arr">→</span>
+    <span>narrar (ARCKHÉvox)</span><span class="arr">→</span>
     <span>montar (ffmpeg)</span><span class="arr">→</span>
     <span>publicar (yt-pubx)</span>
   </div>
@@ -185,7 +185,7 @@
 <span class="k">ffmpeg</span> -version</pre></div>
     <div class="card"><h3>Codex CLI</h3><p>Escribe el guion con tu suscripción. El modelo se puede cambiar con la variable <code>DOCFLOW_CODEX_MODELO</code>.</p><pre><span class="c"># comprobar</span>
 <span class="k">codex</span> --version</pre></div>
-    <div class="card"><h3>Voz, imagen y YouTube</h3><p>inemavox en línea (puerto 8010) para la narración, cliente Agnes de <code>videos-agnes</code> y <code>yt-pubx</code> con el canal autorizado. Para el motor Flow: Node + Playwright.</p><pre><span class="c"># comprobar</span>
+    <div class="card"><h3>Voz, imagen y YouTube</h3><p>ARCKHÉvox en línea (puerto 8010) para la narración, cliente Agnes de <code>videos-agnes</code> y <code>yt-pubx</code> con el canal autorizado. Para el motor Flow: Node + Playwright.</p><pre><span class="c"># comprobar</span>
 <span class="k">~/projetos/yt-pubx/yt-pubx</span> canais</pre></div>
   </div>
 </div></section>
@@ -200,7 +200,7 @@
     <p>Copia <code>temas/egito.yaml</code> y cambia el tema. 60 s de duración total con escenas de 10 s dan 6 escenas.</p>
 <pre><span class="k">slug</span>: egito-antigo
 <span class="k">tema</span>: <span class="s">"El Antiguo Egipto en un minuto: del Nilo a las pirámides..."</span>
-<span class="k">estilo</span>: <span class="s">"realistic cinematic documentary, natural golden light"</span>
+<span class="k">estilo</span>: <span class="s">"realistic cARCKHÉtic documentary, natural golden light"</span>
 <span class="k">duracao_total</span>: 60
 <span class="k">duracao_cena</span>: 10
 <span class="k">formato</span>: <span class="s">"16:9"</span>
@@ -225,7 +225,7 @@
 
   <div class="step"><div class="b">4</div><div>
     <h3>Mira el paquete de YouTube sin enviar</h3>
-    <p>Título, descripción (con el pie del proyecto, de las API usadas y de INEMA.CLUB), etiquetas y miniatura. En esta etapa no se sube nada.</p>
+    <p>Título, descripción (con el pie del proyecto, de las API usadas y de ARCKHÉ AI), etiquetas y miniatura. En esta etapa no se sube nada.</p>
 <pre><span class="k">./docflow publicar</span> temas/egito.yaml  <span class="c"># dry-run</span></pre>
   </div></div>
 
@@ -268,8 +268,8 @@
   <div class="wrap">
     <div class="pill">Python</div><div class="pill">ffmpeg</div><div class="pill">Codex</div><div class="pill">Agnes AI</div><div class="pill">Playwright</div>
     <p style="margin-top:18px">docflow · un tema se convierte en documental ·
-      <a href="https://github.com/inematds/docflow">inematds/docflow</a> ·
-      <a href="https://inema.club">INEMA.CLUB</a></p>
+      <a href="https://github.com/linnoff88-dev/docflow">linnoff88-dev/docflow</a> ·
+      <a href="https://ARCKHÉ AI">ARCKHÉ AI</a></p>
   </div>
 </footer>
 

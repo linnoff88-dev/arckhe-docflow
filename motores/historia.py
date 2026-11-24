@@ -149,7 +149,7 @@ class Montador:
             final = self.d / f'narracao/{c["n"]:02d}.wav'
             if not (bruto.exists() and bruto.stat().st_size > 10000):
                 if not va.narrar(str(bruto), c['narracao'], voz=self.p.get('voz', 'nei')):
-                    raise RuntimeError(f'narração da cena {c["n"]} falhou (inemavox :8010?)')
+                    raise RuntimeError(f'narração da cena {c["n"]} falhou (ARCKHÉvox :8010?)')
             if not final.exists():
                 sh('ffmpeg', '-v', 'error', '-y', '-i', bruto, '-af',
                    'silenceremove=start_periods=1:start_threshold=-45dB,areverse,'
@@ -292,7 +292,7 @@ Cores das palavras: {gk.get('destaques', 'uma palavra-chave em amarelo, o resto 
 Cena: {gk['cena']}
 
 Regras: a frase grande, maiúsculas bold, contorno escuro, legível no celular, cerca de 1/3 da imagem;
-etiqueta pequena "INEMA.CLUB" (amarelo sobre preto) no canto superior esquerdo; nenhum outro texto,
+etiqueta pequena "ARCKHÉ AI" (amarelo sobre preto) no canto superior esquerdo; nenhum outro texto,
 número ou letra solta; alto contraste, cores saturadas, um foco só. Ao terminar, responda só "ok"."""
     log('  gancho: arte do Codex (image_gen)...')
     sp.run(['codex', 'exec', '--skip-git-repo-check', '--dangerously-bypass-approvals-and-sandbox', '-'],

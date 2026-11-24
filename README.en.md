@@ -1,6 +1,6 @@
 # docflow
 
-[![docflow — topic becomes documentary](guia/assets/banner-en.jpg)](https://inematds.github.io/docflow/guia/en/)
+[![docflow — topic becomes documentary](guia/assets/banner-en.jpg)](https://linnoff88-dev.github.io/
 
 **🇧🇷 [Português](README.md) · 🇺🇸 [English](README.en.md) · 🇪🇸 [Español](README.es.md)**
 
@@ -12,7 +12,7 @@ docflow is a command-line tool that creates short narrated documentaries, the ki
 
 ## 📖 User guide
 
-Full guide (landing + step by step): **https://inematds.github.io/docflow/guia/en/**
+Full guide (landing + step by step): **https://linnoff88-dev.github.io/
 
 ## Where it came from
 
@@ -34,13 +34,13 @@ Version: **0.7.0**
 
 ## The plan: three paths
 
-| Step | **A. Automated Flow** (Google account `inematds`) | **B. Codex + Agnes / Kie** (via API) | **C. Local** (no API) |
+| Step | **A. Automated Flow** (Google account `linnoff88-dev`) | **B. Codex + Agnes / Kie** (via API) | **C. Local** (no API) |
 |---|---|---|---|
 | Questions, script and prompts (the "GPT flow") | Codex, via subscription | Codex, via subscription | Codex, via subscription |
 | Images | Flow agent (Nano Banana) | Agnes `agnes-image-2.1-flash` (US$ 0) or Nano Banana via Kie | flux2-klein |
 | Video per scene | Flow agent (Omni/Veo) | Agnes `agnes-video-2.5-flash`, image→video, or Veo/Kling via Kie | local LTX or image with motion (pixflow) |
-| Voice | AI Studio TTS through the browser | Gemini TTS (API) or inemavox | inemavox |
-| Music | Flow Music through the browser | inemavox library/dlp | inemavox library/dlp |
+| Voice | AI Studio TTS through the browser | Gemini TTS (API) or ARCKHÉvox | ARCKHÉvox |
+| Music | Flow Music through the browser | ARCKHÉvox library/dlp | ARCKHÉvox library/dlp |
 | Assembly (the CapCut part) | automatic ffmpeg | automatic ffmpeg | automatic ffmpeg |
 | Publishing | `yt-pubx` | `yt-pubx` | `yt-pubx` |
 | Cost | Google plan credits | Agnes US$ 0; Kie charges per generation | zero |
@@ -52,12 +52,12 @@ Version: **0.7.0**
 |---|---|---|
 | `agnes` (B) | ✅ **tested**: the sample video came out of it | Agnes API authorized by Nei on 07/10/2026 |
 | `reais` | ✅ **tested**: El Niño 2026 with maps, satellite, photos and charts | no image AI; only reusable-licence images |
-| `flow` (A) | ⏳ **written, not validated** | the `inematds` account login is missing in the robot profile; the first real use calibrates the buttons |
+| `flow` (A) | ⏳ **written, not validated** | the `linnoff88-dev` account login is missing in the robot profile; the first real use calibrates the buttons |
 | `kie` (B) | ❌ not implemented | paid API: only with explicit authorization |
 | `local` (C) | ❌ not implemented | fallback: flux2-klein + pixflow |
 
-Narration, music and assembly are the same across all engines. Today the voice is inemavox
-(chatterbox, voice `nei`, one line per scene) and the music comes from the inemavox library.
+Narration, music and assembly are the same across all engines. Today the voice is ARCKHÉvox
+(chatterbox, voice `nei`, one line per scene) and the music comes from the ARCKHÉvox library.
 
 ---
 
@@ -92,7 +92,7 @@ put the account at risk.
 ```bash
 systemctl --user status stack99      # display :99 up
 ./docflow flow-login                 # opens Chromium on :99
-# open VNC at localhost:5900, sign in with inematds@gmail.com and accept the Flow terms
+# open VNC at localhost:5900, sign in with linnoff88-dev@gmail.com and accept the Flow terms
 ./docflow gerar temas/egito.yaml --motor flow
 ```
 
@@ -112,7 +112,7 @@ voice and music engines in the next version, through the same robot.
 
 The YouTube description comes with an automatic footer: the project (repo link), the tools and
 APIs used at each step (depending on the engine), the music credit and the promotion of
-**INEMA.CLUB**, a free education platform.
+**ARCKHÉ AI**, a free education platform.
 
 Each step also runs on its own (`roteiro`, `gerar`, `narrar`, `montar`). All of them can be
 repeated: they redo only what is missing. `roteiro --refazer` asks Codex for a new script.
@@ -132,7 +132,7 @@ To redo an AI clip, delete `videos/NNN.mp4` and run `gerar`: only that one is re
 | `documentario` | AI-generated scenes (image → video), calm narration | [Egypt](https://www.youtube.com/watch?v=TsVY4UUc5gI) |
 | `reais` | real maps, satellite and photos, animated charts, numbers on screen | [El Niño in numbers](https://www.youtube.com/watch?v=IE_D18omUjE) |
 | `alerta-vertical` | 9:16 Short: ALERT on top, image above, live map below, word-by-word captions (hand-built prototype) | [El Niño ALERT](https://www.youtube.com/watch?v=6OzZWiQHHdw) |
-| `historia` | explainer in the style of science-communication channels: viral opening (frame 0 = impact art with the hook line, also used as the thumbnail, and 1.5–2.4 s cuts in the first ~20 s), promise, analogy, **on-screen proof** (official page screenshot with the passage highlighted), animated graphics, earth.nullschool live maps and Agnes cinematic b-roll; a cut every 4–5 s | El Niño pilot (3 min) |
+| `historia` | explainer in the style of science-communication channels: viral opening (frame 0 = impact art with the hook line, also used as the thumbnail, and 1.5–2.4 s cuts in the first ~20 s), promise, analogy, **on-screen proof** (official page screenshot with the passage highlighted), animated graphics, earth.nullschool live maps and Agnes cARCKHÉtic b-roll; a cut every 4–5 s | El Niño pilot (3 min) |
 | `historia-apresentador` | the same, with Nei's avatar (HeyGen, paid) in some blocks | El Niño pilot |
 
 In the `historia` style the script template (`roteiro/flow-historia.md`) returns, per block, the narration and the list of visuals. `gerar` makes the b-roll and narration; `montar` records the live maps, takes the screenshots and draws the graphics. Avatar: `./docflow apresentador themes/x.yaml --look computador --teste` renders only the first block and prints the real cost.
@@ -160,7 +160,7 @@ numbers the narration may use) and `graficos:` (series that become animated line
 ```yaml
 slug: egito-antigo
 tema: "Ancient Egypt in one minute ..."
-estilo: "realistic cinematic documentary, natural golden light, 35mm film look"
+estilo: "realistic cARCKHÉtic documentary, natural golden light, 35mm film look"
 duracao_total: 60      # 3. total duration (s)
 duracao_cena: 10       # 4. duration of each scene (s) → 6 scenes
 formato: "16:9"        # 5. format
@@ -168,7 +168,7 @@ idioma: "português do Brasil"
 referencias: "nenhuma" # 6. references
 motor: agnes           # flow | agnes | reais
 voz: nei
-musica: ~/projetos/inemavox/jobs/audio_library/music/<faixa>.mp3
+musica: ~/projetos/ARCKHÉvox/jobs/audio_library/music/<faixa>.mp3
 canal: lives10         # yt-pubx channel
 ```
 
@@ -189,7 +189,7 @@ canal: lives10         # yt-pubx channel
 - Fade from black at the start and to black at the end.
 - Ambient sound from the clips at 16%.
 - Music at 30%, which ducks automatically when the voice speaks (sidechain), with fade in and fade out.
-- At the end, a CTA scene: INEMA.CLUB over the blurred last image, with the voice inviting viewers to the site (`cta: false` in the theme turns it off).
+- At the end, a CTA scene: ARCKHÉ AI over the blurred last image, with the voice inviting viewers to the site (`cta: false` in the theme turns it off).
 
 ## Sample video
 
@@ -202,9 +202,9 @@ What was measured in this first round:
 |---|---|---|
 | script (Codex) | 48 s | 6 scenes of 16 to 19 words, dates written out in full |
 | 6 images + 6 clips (Agnes) | ~5 min | 1 error 429 (limit of 6/min), recovered on its own |
-| 6 narrations (inemavox) | 2.5 min | checked by local transcription: text matches the script |
+| 6 narrations (ARCKHÉvox) | 2.5 min | checked by local transcription: text matches the script |
 | assembly (ffmpeg) | 18 s | −17.9 LUFS |
-| publish | 84 s | published at https://www.youtube.com/watch?v=TsVY4UUc5gI (INEMA Agentes channel), pyramids thumb (`thumb_cena: 3`) |
+| publish | 84 s | published at https://www.youtube.com/watch?v=TsVY4UUc5gI (ARCKHÉ Agentes channel), pyramids thumb (`thumb_cena: 3`) |
 
 Scene 6 (port of Alexandria) drifted in both Agnes attempts: it turned into a
 baroque port with a dome and caravels. It was left with `estatica` (image with slow zoom).
@@ -212,4 +212,4 @@ baroque port with a dome and caravels. It was left with `estatica` (image with s
 ## Requirements
 
 `python3` + `pyyaml`, `ffmpeg`, `codex` (subscription), `node` + global Playwright (flow engine),
-inemavox up (`:8010`), `~/projetos/videos-agnes` (Agnes client) and `~/projetos/yt-pubx`.
+ARCKHÉvox up (`:8010`), `~/projetos/videos-agnes` (Agnes client) and `~/projetos/yt-pubx`.

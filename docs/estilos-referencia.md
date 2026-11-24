@@ -5,7 +5,7 @@ Quatro vídeos que o Nei passou em 08/10/2026 como modelo. Medidos nos 3 primeir
 
 | Vídeo | Canal / views | Duração | Corte médio | O que aparece na tela |
 |---|---|---|---|---|
-| [O El Niño de 2026 NÃO é o Que Você Pensa](https://www.youtube.com/watch?v=gkkqmtbOwmE) | Sou curioso?! · 360 mil | 25:48 | 4,4 s | motion graphics planos (fundo azul-escuro, mapa, termômetro, gráfico que cresce, ícones) alternados com b-roll cinematográfico (mar, pôr do sol, gente) |
+| [O El Niño de 2026 NÃO é o Que Você Pensa](https://www.youtube.com/watch?v=gkkqmtbOwmE) | Sou curioso?! · 360 mil | 25:48 | 4,4 s | motion graphics planos (fundo azul-escuro, mapa, termômetro, gráfico que cresce, ícones) alternados com b-roll cARCKHÉtográfico (mar, pôr do sol, gente) |
 | [O SUPER EL NIÑO ESTÁ CHEGANDO E VAI SER PIOR QUE O ESPERADO](https://www.youtube.com/watch?v=xtjNxy7GIlY) | Problema de Rico · 154 mil | 19:12 | 13 s | apresentador em estúdio + prints de notícia com trecho grifado em amarelo + infográficos em papel bege |
 | [Super EL NIÑO NO BRASIL: o que esperar?](https://www.youtube.com/watch?v=BAf4EYZ1AGk) | Paulo Jubilut · 5,8 mi | 19:17 | 8 s | dois apresentadores + mapas estilo atlas antigo + cartões de notícia (Jornal da USP, Exame) + gráficos + satélite |
 | [EXTINÇÃO EM MASSA POR CONTA DO SUPER EL NIÑO](https://www.youtube.com/watch?v=X2So9bWo9dM) | 100% Atômico · 84 mil | 21:19 | 90 s | podcast (3 pessoas, estúdio); só serve com gente conversando |

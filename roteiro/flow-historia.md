@@ -32,13 +32,13 @@ respostas abaixo e devolve TUDO de uma vez, sem perguntar nada.
 - Frases curtas, com ritmo. Números e datas POR EXTENSO na narração; siglas que se leem letra a
   letra, escreva como se fala ou explique ("a agência americana do clima").
 - Penúltimo bloco: o que fazer (orientações dos Fatos). Último bloco: só o CTA:
-  "Quer aprender a criar vídeos assim com inteligência artificial? Acesse inema ponto club. É gratuito."
+  "Quer aprender a criar vídeos assim com inteligência artificial? Acesse ARCKHÉ ponto club. É gratuito."
 - No máximo ~2,1 palavras por segundo de bloco.
 
 ## Visuais (um a cada 4–5 s de fala; cada bloco tem de 3 a 9)
 Tipos permitidos e campos:
 - {{"tipo":"mapa","vista":"pacifico|globo|brasil-temp|sul-vento|brasil-chuva|atlantico-mar|mundo-vento"}} (mapa ao vivo de hoje)
-- {{"tipo":"broll","id":"<id da lista broll>"}} (cena de cinema gerada por IA; sem texto, sem pessoas famosas)
+- {{"tipo":"broll","id":"<id da lista broll>"}} (cena de cARCKHÉ gerada por IA; sem texto, sem pessoas famosas)
 - {{"tipo":"prova","url":"<URL dos Fatos>","trecho":"<frase EXATA, copiada da página, no idioma dela>","selo":"site · data"}}
 - {{"tipo":"termometro","valor":3.2,"rotulo":"...","fonte_txt":"..."}}
 - {{"tipo":"contador","valor":12562,"casas":0,"prefixo":"","sufixo":"","rotulo":"...","antes":"comparação curta","fonte_txt":"..."}}
@@ -56,7 +56,7 @@ Responda APENAS com um JSON válido, sem markdown, neste formato:
 {{
   "titulo": "...",
   "gancho": {{"frase": "2 a 6 palavras em MAIÚSCULAS (vira o frame 0 e a thumb)", "destaques": "qual palavra em qual cor", "cena": "imagem de impacto, um foco só, sem outro texto"}},
-  "broll": {{"id-curto": "prompt em inglês, cinematográfico, sem texto", "...": "..."}},
+  "broll": {{"id-curto": "prompt em inglês, cARCKHÉtográfico, sem texto", "...": "..."}},
   "cenas": [
     {{"n": 1, "apresentador": false, "narracao": "...", "visuais": [{{"tipo": "mapa", "vista": "pacifico"}}]}}
   ],

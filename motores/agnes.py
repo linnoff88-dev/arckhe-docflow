@@ -41,7 +41,7 @@ PROPORCAO = {(1312, 736): '16:9', (736, 1312): '9:16', (1024, 1024): '1:1'}
 def video(dest, png, prompt, w, h, frames, log, tentativas=8):
     """frames @24fps -> seconds 4..12 (teto do 2.5-flash); w/h só escolhem a proporção."""
     body = {'model': va.VIDEO_MODEL,
-            'prompt': f'{prompt}. Cinematic documentary shot, natural motion, stable scene. '
+            'prompt': f'{prompt}. CARCKHÉtic documentary shot, natural motion, stable scene. '
                       f'No text, no watermark, no subtitles.',
             'mode': 'keyframe', 'seconds': va.segundos_25(frames), 'n': 1, 'size': '720P',
             'aspect_ratio': PROPORCAO.get((w, h), '16:9'),

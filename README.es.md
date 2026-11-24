@@ -1,6 +1,6 @@
 # docflow
 
-[![docflow — el tema se vuelve documental](guia/assets/banner-es.jpg)](https://inematds.github.io/docflow/guia/es/)
+[![docflow — el tema se vuelve documental](guia/assets/banner-es.jpg)](https://linnoff88-dev.github.io/
 
 **🇧🇷 [Português](README.md) · 🇺🇸 [English](README.en.md) · 🇪🇸 [Español](README.es.md)**
 
@@ -12,7 +12,7 @@ docflow es una herramienta de línea de comandos que crea documentales cortos na
 
 ## 📖 Guía de uso
 
-Guía completa (landing + paso a paso): **https://inematds.github.io/docflow/guia/es/**
+Guía completa (landing + paso a paso): **https://linnoff88-dev.github.io/
 
 ## De dónde viene
 
@@ -34,13 +34,13 @@ Versión: **0.7.0**
 
 ## El plan: tres caminos
 
-| Etapa | **A. Flow automatizado** (cuenta Google `inematds`) | **B. Codex + Agnes / Kie** (por API) | **C. Local** (sin API) |
+| Etapa | **A. Flow automatizado** (cuenta Google `linnoff88-dev`) | **B. Codex + Agnes / Kie** (por API) | **C. Local** (sin API) |
 |---|---|---|---|
 | Preguntas, guion y prompts (el "GPT flow") | Codex, con la suscripción | Codex, con la suscripción | Codex, con la suscripción |
 | Imágenes | Agente de Flow (Nano Banana) | Agnes `agnes-image-2.1-flash` (US$ 0) o Nano Banana vía Kie | flux2-klein |
 | Video por escena | Agente de Flow (Omni/Veo) | Agnes `agnes-video-2.5-flash`, imagen→video, o Veo/Kling vía Kie | LTX local o imagen con movimiento (pixflow) |
-| Voz | AI Studio TTS desde el navegador | Gemini TTS (API) o inemavox | inemavox |
-| Música | Flow Music desde el navegador | biblioteca/dlp de inemavox | biblioteca/dlp de inemavox |
+| Voz | AI Studio TTS desde el navegador | Gemini TTS (API) o ARCKHÉvox | ARCKHÉvox |
+| Música | Flow Music desde el navegador | biblioteca/dlp de ARCKHÉvox | biblioteca/dlp de ARCKHÉvox |
 | Montaje (el lugar de CapCut) | ffmpeg automático | ffmpeg automático | ffmpeg automático |
 | Publicación | `yt-pubx` | `yt-pubx` | `yt-pubx` |
 | Costo | créditos del plan de Google | Agnes US$ 0; Kie cobra por generación | cero |
@@ -52,12 +52,12 @@ Versión: **0.7.0**
 |---|---|---|
 | `agnes` (B) | ✅ **probado**: el video modelo salió de él | API de Agnes autorizada por Nei el 07/10/2026 |
 | `reais` | ✅ **probado**: El Niño 2026 con mapas, satélite, fotos y gráficos | sin IA de imagen; solo imágenes con licencia de reutilización |
-| `flow` (A) | ⏳ **escrito, no validado** | falta el inicio de sesión de la cuenta `inematds` en el perfil del robot; el primer uso real calibra los botones |
+| `flow` (A) | ⏳ **escrito, no validado** | falta el inicio de sesión de la cuenta `linnoff88-dev` en el perfil del robot; el primer uso real calibra los botones |
 | `kie` (B) | ❌ no implementado | API de pago: solo con autorización explícita |
 | `local` (C) | ❌ no implementado | respaldo: flux2-klein + pixflow |
 
-La narración, la música y el montaje son los mismos en todos los motores. Hoy la voz es inemavox
-(chatterbox, voz `nei`, una línea por escena) y la música viene de la biblioteca de inemavox.
+La narración, la música y el montaje son los mismos en todos los motores. Hoy la voz es ARCKHÉvox
+(chatterbox, voz `nei`, una línea por escena) y la música viene de la biblioteca de ARCKHÉvox.
 
 ---
 
@@ -92,7 +92,7 @@ ponen en riesgo la cuenta.
 ```bash
 systemctl --user status stack99      # pantalla :99 activa
 ./docflow flow-login                 # abre el Chromium en :99
-# abrir el VNC en localhost:5900, entrar con inematds@gmail.com y aceptar los términos de Flow
+# abrir el VNC en localhost:5900, entrar con linnoff88-dev@gmail.com y aceptar los términos de Flow
 ./docflow gerar temas/egito.yaml --motor flow
 ```
 
@@ -112,7 +112,7 @@ motores de voz y música en la próxima versión, por el mismo robot.
 
 La descripción de YouTube sale con un pie de página automático: el proyecto (enlace del repo), las herramientas y
 APIs usadas en cada etapa (según el motor), el crédito de la música y la difusión de
-**INEMA.CLUB**, plataforma de educación gratuita.
+**ARCKHÉ AI**, plataforma de educación gratuita.
 
 Cada etapa también se ejecuta por separado (`roteiro`, `gerar`, `narrar`, `montar`). Todas se pueden
 repetir: rehacen solo lo que falta. `roteiro --refazer` le pide un guion nuevo a Codex.
@@ -161,7 +161,7 @@ línea o barras).
 ```yaml
 slug: egito-antigo
 tema: "El Antiguo Egipto en un minuto ..."
-estilo: "realistic cinematic documentary, natural golden light, 35mm film look"
+estilo: "realistic cARCKHÉtic documentary, natural golden light, 35mm film look"
 duracao_total: 60      # 3. duración total (s)
 duracao_cena: 10       # 4. duración de cada escena (s) → 6 escenas
 formato: "16:9"        # 5. formato
@@ -169,7 +169,7 @@ idioma: "português do Brasil"
 referencias: "nenhuma" # 6. referencias
 motor: agnes           # flow | agnes | reais
 voz: nei
-musica: ~/projetos/inemavox/jobs/audio_library/music/<faixa>.mp3
+musica: ~/projetos/ARCKHÉvox/jobs/audio_library/music/<faixa>.mp3
 canal: lives10         # canal de yt-pubx
 ```
 
@@ -190,7 +190,7 @@ canal: lives10         # canal de yt-pubx
 - Fundido desde negro al inicio y hacia negro al final.
 - Sonido ambiente de los clips al 16%.
 - Música al 30%, que baja sola cuando habla la voz (sidechain), con fade in y fade out.
-- Al final, una escena de CTA: INEMA.CLUB sobre la última imagen desenfocada, con la voz invitando al sitio (`cta: false` en el tema la desactiva).
+- Al final, una escena de CTA: ARCKHÉ AI sobre la última imagen desenfocada, con la voz invitando al sitio (`cta: false` en el tema la desactiva).
 
 ## Video modelo
 
@@ -203,9 +203,9 @@ Lo que se midió en esta primera ronda:
 |---|---|---|
 | guion (Codex) | 48 s | 6 escenas de 16 a 19 palabras, fechas escritas con todas sus palabras |
 | 6 imágenes + 6 clips (Agnes) | ~5 min | 1 error 429 (límite de 6/min), se recuperó solo |
-| 6 narraciones (inemavox) | 2,5 min | verificadas con transcripción local: el texto coincide con el guion |
+| 6 narraciones (ARCKHÉvox) | 2,5 min | verificadas con transcripción local: el texto coincide con el guion |
 | montaje (ffmpeg) | 18 s | −17,9 LUFS |
-| publicar | 84 s | publicado en https://www.youtube.com/watch?v=TsVY4UUc5gI (canal INEMA Agentes), thumb de las pirámides (`thumb_cena: 3`) |
+| publicar | 84 s | publicado en https://www.youtube.com/watch?v=TsVY4UUc5gI (canal ARCKHÉ Agentes), thumb de las pirámides (`thumb_cena: 3`) |
 
 La escena 6 (puerto de Alejandría) se desvió en los dos intentos de Agnes: se convirtió en un
 puerto barroco con cúpula y carabelas. Se quedó con `estatica` (imagen con zoom lento).
@@ -213,4 +213,4 @@ puerto barroco con cúpula y carabelas. Se quedó con `estatica` (imagen con zoo
 ## Requisitos
 
 `python3` + `pyyaml`, `ffmpeg`, `codex` (suscripción), `node` + Playwright global (motor flow),
-inemavox activo (`:8010`), `~/projetos/videos-agnes` (cliente de Agnes) y `~/projetos/yt-pubx`.
+ARCKHÉvox activo (`:8010`), `~/projetos/videos-agnes` (cliente de Agnes) y `~/projetos/yt-pubx`.

@@ -1,7 +1,7 @@
 # El Niño 2026 — o que esperar no Brasil e como se preparar (fatos pesquisados em 07/10/2026)
 slug: elnino-2026
 tema: "O El Niño de 2026 está acontecendo agora: o pico deve vir em dezembro. O que ele traz para o Brasil (calor, seca, fogo, temporais e enchentes) e como as pessoas podem se preparar"
-estilo: "realistic cinematic documentary, dramatic natural light, 35mm film look, Brazilian landscapes"
+estilo: "realistic cARCKHÉtic documentary, dramatic natural light, 35mm film look, Brazilian landscapes"
 duracao_total: 90
 duracao_cena: 10
 formato: "16:9"
@@ -36,6 +36,6 @@ estrutura: |
 # Execução
 motor: agnes
 voz: nei
-musica: ~/projetos/inemavox/jobs/audio_library/music/freesound_595385_Star_walk_-_Cinematic_Atmo_Amb_Fantasy_S.mp3
+musica: ~/projetos/ARCKHÉvox/jobs/audio_library/music/freesound_595385_Star_walk_-_CARCKHÉtic_Atmo_Amb_Fantasy_S.mp3
 thumb_cena: 6
 canal: lives10
