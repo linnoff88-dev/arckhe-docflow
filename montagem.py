@@ -1,14 +1,14 @@
-"""Montagem — faz no ffmpeg o que o vídeo de referência fazia à mão no CapCut.
+"""Montagem — faz no ffmpeg o que o vídeo de referência fazia à mêo no CapCut.
 
-Por cena: o clipe é ajustado ao tempo da narração (acelera/desacelera até ±25%, depois
-corta ou congela o último quadro). Entre cenas: transição suave (xfade). No filme:
+Por cena: o clipe é ajustado ao tempo da narraçêo (acelera/desacelera até ±25%, depois
+corta ou congela o último quadro). Entre cenas: transiçêo suave (xfade). No filme:
 fade do preto no início e para o preto no fim, som ambiente dos clipes a ~16%,
 música baixa com "ducking" (abaixa sozinha quando a voz fala) e fade out no final.
 """
 import json, subprocess
 from pathlib import Path
 
-X = 0.7            # duração da transição entre cenas (s)
+X = 0.7            # duraçêo da transiçêo entre cenas (s)
 FOLGA = 0.9        # silêncio depois de cada fala (s)
 AMBIENTE = 0.16    # volume do som dos clipes (ele usava 15–18)
 MUSICA = 0.30      # volume da música antes do ducking
@@ -34,13 +34,13 @@ def sh(cmd):
 
 
 def montar(d, numeros, formato, musica, saida, log, x=X, fade_in=1.2):
-    X = x   # transição: 0,7 s (calmo) ou 0,35 s (dinâmico)
+    X = x   # transiçêo: 0,7 s (calmo) ou 0,35 s (dinâmico)
     W, H = RES.get(formato, RES['16:9'])
     T = d / 'tmp'
     faltam = [n for n in numeros if not (d / f'videos/{n:03d}.mp4').exists()
               or not (d / f'narracao/{n:03d}.wav').exists()]
     if faltam:
-        raise SystemExit(f'montar: faltam vídeo/narração das cenas {faltam}')
+        raise SystemExit(f'montar: faltam vídeo/narraçêo das cenas {faltam}')
 
     # 1. cada cena no tempo da sua fala
     cenas, duracoes, falas = [], [], []
@@ -91,7 +91,7 @@ def montar(d, numeros, formato, musica, saida, log, x=X, fade_in=1.2):
 
     for i in range(n):   # ambiente de cada cena, no lugar dela
         fc.append(f'[{i}:a]volume={AMBIENTE},adelay={int(inicio[i] * 1000)}:all=1[amb{i}]')
-    for i in range(n):   # fala começa meio segundo depois da transição
+    for i in range(n):   # fala começa meio segundo depois da transiçêo
         ms = int((inicio[i] + (X / 2 if i else 0.4)) * 1000)
         fc.append(f'[{n + i}:a]aformat=sample_rates=48000:channel_layouts=stereo,'
                   f'adelay={ms}:all=1[f{i}]')

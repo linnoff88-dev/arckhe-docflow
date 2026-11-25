@@ -39,7 +39,7 @@ PROPORCAO = {(1312, 736): '16:9', (736, 1312): '9:16', (1024, 1024): '1:1'}
 
 
 def video(dest, png, prompt, w, h, frames, log, tentativas=8):
-    """frames @24fps -> seconds 4..12 (teto do 2.5-flash); w/h só escolhem a proporção."""
+    """frames @24fps -> seconds 4..12 (teto do 2.5-flash); w/h só escolhem a proporçêo."""
     body = {'model': va.VIDEO_MODEL,
             'prompt': f'{prompt}. CARCKHÉtic documentary shot, natural motion, stable scene. '
                       f'No text, no watermark, no subtitles.',
@@ -91,7 +91,7 @@ def gerar(p, t, d, log):
         return dest.exists() or imagem(dest, c['prompt_imagem'], w, h, log)
     with ThreadPoolExecutor(3) as ex:
         list(ex.map(img, cenas))
-    # vídeos: escalonados de 11 em 11 s para não estourar 6 req/min
+    # vídeos: escalonados de 11 em 11 s para nêo estourar 6 req/min
     def vid(i_c):
         i, c = i_c
         dest = d / f'videos/{c["n"]:03d}.mp4'

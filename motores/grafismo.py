@@ -1,8 +1,8 @@
 """Grafismos animados do estilo "historia" (paleta fixa azul-escura, traço plano).
 
-Cada função desenha quadro a quadro com PIL e manda direto para o ffmpeg (rawvideo),
+Cada funçêo desenha quadro a quadro com PIL e manda direto para o ffmpeg (rawvideo),
 sem HTML nem navegador: termômetro, contador, capítulo, cartões "no seu bolso",
-linha do tempo e citação. Todas aceitam (saida, segundos, W, H).
+linha do tempo e citaçêo. Todas aceitam (saida, segundos, W, H).
 """
 import math, subprocess
 from pathlib import Path
@@ -221,9 +221,9 @@ def linha_tempo(saida, segundos, W, H, pontos, titulo='', unidade='', realce=-1,
     out.fim()
 
 
-# ---------------------------------------------------------------- citação
+# ---------------------------------------------------------------- citaçêo
 def citacao(saida, segundos, W, H, texto, autor):
-    """Citação digitada letra a letra, aspas grandes, autor embaixo."""
+    """Citaçêo digitada letra a letra, aspas grandes, autor embaixo."""
     out, n = Saida(saida, W, H), int(segundos * FPS)
     ft = fonte(int(H * 0.058), False)
     d0 = ImageDraw.Draw(Image.new('RGB', (10, 10)))

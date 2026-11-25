@@ -1,11 +1,11 @@
-"""Motor "historia": documentário explicativo no estilo dos canais de divulgação (gancho de cena,
+"""Motor "historia": documentário explicativo no estilo dos canais de divulgaçêo (gancho de cena,
 promessa, analogia, prova na tela), com paleta fixa e corte a cada 3–5 s.
 
 Entrada: plano.json com cenas -> narracao + visuais (lista). Cada visual vira um clipe:
   mapa (earth.nullschool ao vivo), broll (Agnes ti2vid em <saida>/broll/<id>.mp4),
   prova (print real grifado), termometro, contador, capitulo, bolso, linha_tempo,
   citacao, oceano, cta, imagem (arquivo).
-A duração de cada visual = narração da cena dividida entre eles (capítulo tem duração fixa).
+A duraçêo de cada visual = narraçêo da cena dividida entre eles (capítulo tem duraçêo fixa).
 Opcional: apresentador (vídeo do avatar do Nei por cena, em <saida>/apresentador/NN.mp4):
 quando existe, a cena usa o áudio dele e alterna avatar e visuais.
 """
@@ -140,7 +140,7 @@ class Montador:
             getattr(g, t)(out, seg, W, H, **kw)
         return out
 
-    # ------------------------------------------------------------ narração
+    # ------------------------------------------------------------ narraçêo
     def narrar(self):
         sys.path.insert(0, str(Path.home() / 'projetos/videos-agnes'))
         import pipeline as va
@@ -149,13 +149,13 @@ class Montador:
             final = self.d / f'narracao/{c["n"]:02d}.wav'
             if not (bruto.exists() and bruto.stat().st_size > 10000):
                 if not va.narrar(str(bruto), c['narracao'], voz=self.p.get('voz', 'nei')):
-                    raise RuntimeError(f'narração da cena {c["n"]} falhou (ARCKHÉvox :8010?)')
+                    raise RuntimeError(f'narraçêo da cena {c["n"]} falhou (ARCKHÉvox :8010?)')
             if not final.exists():
                 sh('ffmpeg', '-v', 'error', '-y', '-i', bruto, '-af',
                    'silenceremove=start_periods=1:start_threshold=-45dB,areverse,'
                    'silenceremove=start_periods=1:start_threshold=-45dB,areverse,'
                    f'atempo={self.p.get("atempo", 1.06)},apad=pad_dur=0.35', '-ar', '48000', '-ac', '2', final)
-            self.log(f'  narração {c["n"]}: {dur(final):.1f}s')
+            self.log(f'  narraçêo {c["n"]}: {dur(final):.1f}s')
 
     # ------------------------------------------------------------ cena
     def cena(self, c):
@@ -186,7 +186,7 @@ class Montador:
                 seq.append(('avatar', None))
         else:
             seq = [('v', v) for v in vis]
-        # tudo com "segundos" (gancho): estica/encolhe por igual para fechar com a narração
+        # tudo com "segundos" (gancho): estica/encolhe por igual para fechar com a narraçêo
         escala = total / fixos if (not livres and fixos and not com_avatar) else 1.0
         n_av = sum(1 for k, _ in seq if k == 'avatar')
         if com_avatar:
@@ -283,8 +283,8 @@ def gerar_gancho(p, d, log=print):
         return out if out.exists() else None
     pasta = d / 'tmp/gancho'
     pasta.mkdir(parents=True, exist_ok=True)
-    prompt = f"""Use sua ferramenta de geração de imagem (image_gen) para criar UMA imagem horizontal 16:9 de impacto,
-estilo thumbnail viral de canal de ciência, e salve o PNG como arte.png neste diretório. Não crie nem edite outro arquivo.
+    prompt = f"""Use sua ferramenta de geraçêo de imagem (image_gen) para criar UMA imagem horizontal 16:9 de impacto,
+estilo thumbnail viral de canal de ciência, e salve o PNG como arte.png neste diretório. Nêo crie nem edite outro arquivo.
 
 Assunto do vídeo: {p.get('titulo', '')}
 Frase escrita na imagem (ortografia exata, com acentos): "{gk['frase']}"
@@ -299,7 +299,7 @@ número ou letra solta; alto contraste, cores saturadas, um foco só. Ao termina
            input=prompt, cwd=pasta, capture_output=True, text=True, timeout=900)
     arte = pasta / 'arte.png'
     if not arte.exists():
-        raise RuntimeError('gancho: o Codex não gerou arte.png')
+        raise RuntimeError('gancho: o Codex nêo gerou arte.png')
     Image.open(arte).convert('RGB').resize((W, H), Image.LANCZOS).save(out)
     Image.open(arte).convert('RGB').resize((1280, 720), Image.LANCZOS).save(d / 'thumb.jpg', quality=92)
     log(f'  gancho: {out} (+ thumb.jpg)')
@@ -310,7 +310,7 @@ HEYGEN = Path.home() / '.claude/skills/heygen-cli/scripts/heygen.mjs'
 
 
 def gerar_apresentador(p, d, look, log=print, so_primeira=False):
-    """Avatar do Nei (HeyGen, PAGO) falando a narração das cenas com "apresentador": true.
+    """Avatar do Nei (HeyGen, PAGO) falando a narraçêo das cenas com "apresentador": true.
     Grava <d>/apresentador/NN.mp4 e o custo real de cada render em custo.json."""
     d = Path(d)
     (d / 'apresentador').mkdir(parents=True, exist_ok=True)

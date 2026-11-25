@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>docflow — tema vira documentário narrado no YouTube</title>
-<meta name="description" content="docflow transforma um tema em documentário curto narrado e publica no YouTube: roteiro no Codex, imagens e vídeo pelo Google Flow ou pela API Agnes, narração local, montagem no ffmpeg e upload pelo yt-pubx.">
+<meta name="description" content="docflow transforma um tema em documentário curto narrado e publica no YouTube: roteiro no Codex, imagens e vídeo pelo Google Flow ou pela API Agnes, narraçêo local, montagem no ffmpeg e upload pelo yt-pubx.">
 <link rel="alternate" hreflang="pt-BR" href="https://linnoff88-dev.github.io/
 <link rel="alternate" hreflang="en" href="https://linnoff88-dev.github.io/
 <link rel="alternate" hreflang="es" href="https://linnoff88-dev.github.io/
@@ -129,7 +129,7 @@
     <div>
       <span class="chip">Canal dark · documentário sem rosto</span>
       <h1>Do tema ao YouTube, <span class="amb">sem passo manual</span></h1>
-      <p class="lead">Você escreve o tema em 6 linhas. O docflow faz o roteiro, as imagens, os vídeos, a narração, a montagem e a publicação.</p>
+      <p class="lead">Você escreve o tema em 6 linhas. O docflow faz o roteiro, as imagens, os vídeos, a narraçêo, a montagem e a publicaçêo.</p>
       <div class="cta">
         <a class="btn" href="#guia">Começar o guia</a>
         <a class="btn ghost" href="https://github.com/linnoff88-dev/docflow" target="_blank" rel="noopener">Ver no GitHub</a>
@@ -141,18 +141,18 @@
 
 <section id="resumo" class="resumo"><div class="wrap">
   <span class="chip">Em resumo</span>
-  <p>O docflow é uma ferramenta de linha de comando que cria documentários curtos narrados, do tipo usado em canais "dark" do YouTube, em que não aparece ninguém. Você responde 6 perguntas num arquivo (tema, estilo, duração, duração de cada cena, formato e referências) e ele faz o resto: escreve o roteiro, gera as imagens e os vídeos de cada cena, narra, monta com música e transições e publica no YouTube. Ele recria, de forma automática, um processo que normalmente se faz à mão no ChatGPT, no Google Flow e no CapCut. Para usar, você precisa de Linux com Python, ffmpeg e o Codex.</p>
+  <p>O docflow é uma ferramenta de linha de comando que cria documentários curtos narrados, do tipo usado em canais "dark" do YouTube, em que nêo aparece ninguém. Você responde 6 perguntas num arquivo (tema, estilo, duraçêo, duraçêo de cada cena, formato e referências) e ele faz o resto: escreve o roteiro, gera as imagens e os vídeos de cada cena, narra, monta com música e transições e publica no YouTube. Ele recria, de forma automática, um processo que normalmente se faz à mêo no ChatGPT, no Google Flow e no CapCut. Para usar, você precisa de Linux com Python, ffmpeg e o Codex.</p>
 </div></section>
 
 <section id="oque"><div class="wrap">
   <span class="chip">O que é</span>
   <h2>Um processo manual de 6 etapas virou um comando</h2>
   <p class="sub">O ponto de partida foi um tutorial de canal dark: GPT para o roteiro, Google Flow para imagens e vídeos, AI Studio para a voz, Flow Music para a trilha, CapCut para a montagem e upload manual. O docflow faz as mesmas etapas sozinho.</p>
-  <figure style="margin:0 0 26px;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px #000"><img src="assets/banner-grade.jpg" alt="As seis etapas do docflow: roteiro, imagens, vídeo, narração, montagem e YouTube" loading="lazy" style="width:100%;display:block"></figure>
+  <figure style="margin:0 0 26px;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px #000"><img src="assets/banner-grade.jpg" alt="As seis etapas do docflow: roteiro, imagens, vídeo, narraçêo, montagem e YouTube" loading="lazy" style="width:100%;display:block"></figure>
   <div class="grid g3">
-    <div class="card"><h3>📝 O "flow" do roteiro</h3><p>As mesmas 6 perguntas do tutorial, respondidas num arquivo <code>tema.yaml</code>. O Codex (pela assinatura) devolve roteiro, narração, prompts de imagem e de vídeo numerados, prompt de música e título, descrição e tags.</p></div>
-    <div class="card"><h3>🔁 Motor trocável</h3><p>Imagem e vídeo saem do <strong>Google Flow</strong> (automatizado no navegador) ou da <strong>API Agnes</strong> (imagem e imagem→vídeo, US$ 0). Narração, montagem e publicação são iguais para os dois.</p></div>
-    <div class="card"><h3>✂️ O CapCut no ffmpeg</h3><p>Ajusta cada clipe ao tempo da fala, coloca transição entre cenas, fade do preto, som ambiente a 16% e música que abaixa sozinha quando a voz fala. Depois publica pelo yt-pubx.</p></div>
+    <div class="card"><h3>📝 O "flow" do roteiro</h3><p>As mesmas 6 perguntas do tutorial, respondidas num arquivo <code>tema.yaml</code>. O Codex (pela assinatura) devolve roteiro, narraçêo, prompts de imagem e de vídeo numerados, prompt de música e título, descriçêo e tags.</p></div>
+    <div class="card"><h3>🔁 Motor trocável</h3><p>Imagem e vídeo saem do <strong>Google Flow</strong> (automatizado no navegador) ou da <strong>API Agnes</strong> (imagem e imagem→vídeo, US$ 0). Narraçêo, montagem e publicaçêo sêo iguais para os dois.</p></div>
+    <div class="card"><h3>✂️ O CapCut no ffmpeg</h3><p>Ajusta cada clipe ao tempo da fala, coloca transiçêo entre cenas, fade do preto, som ambiente a 16% e música que abaixa sozinha quando a voz fala. Depois publica pelo yt-pubx.</p></div>
   </div>
 </div></section>
 
@@ -169,9 +169,9 @@
     <span>publicar (yt-pubx)</span>
   </div>
   <div class="grid g3" style="margin-top:26px">
-    <div class="card"><span class="num">A</span><h3>Flow automatizado</h3><p>Conta Google. Um robô (Playwright) abre o Flow, cola os blocos de prompts no agente, aprova, pede a coleção e baixa o zip. <strong>Escrito, ainda não validado:</strong> falta o primeiro login.</p></div>
+    <div class="card"><span class="num">A</span><h3>Flow automatizado</h3><p>Conta Google. Um robô (Playwright) abre o Flow, cola os blocos de prompts no agente, aprova, pede a coleçêo e baixa o zip. <strong>Escrito, ainda nêo validado:</strong> falta o primeiro login.</p></div>
     <div class="card"><span class="num">B</span><h3>Codex + Agnes</h3><p>Imagens com <code>agnes-image-2.1-flash</code> e vídeo com <code>agnes-video-2.5-flash</code> (imagem→vídeo), por API, a custo zero. <strong>Testado:</strong> fez o vídeo de exemplo.</p></div>
-    <div class="card"><span class="num">C</span><h3>Local (planejado)</h3><p>Sem API: flux2-klein para imagem e imagem com movimento para vídeo. Ainda não implementado.</p></div>
+    <div class="card"><span class="num">C</span><h3>Local (planejado)</h3><p>Sem API: flux2-klein para imagem e imagem com movimento para vídeo. Ainda nêo implementado.</p></div>
   </div>
 </div></section>
 
@@ -185,7 +185,7 @@
 <span class="k">ffmpeg</span> -version</pre></div>
     <div class="card"><h3>Codex CLI</h3><p>Escreve o roteiro pela sua assinatura. O modelo pode ser trocado pela variável <code>DOCFLOW_CODEX_MODELO</code>.</p><pre><span class="c"># conferir</span>
 <span class="k">codex</span> --version</pre></div>
-    <div class="card"><h3>Voz, imagem e YouTube</h3><p>ARCKHÉvox no ar (porta 8010) para a narração, cliente Agnes do <code>videos-agnes</code> e o <code>yt-pubx</code> com o canal autorizado. Para o motor Flow: Node + Playwright.</p><pre><span class="c"># conferir</span>
+    <div class="card"><h3>Voz, imagem e YouTube</h3><p>ARCKHÉvox no ar (porta 8010) para a narraçêo, cliente Agnes do <code>videos-agnes</code> e o <code>yt-pubx</code> com o canal autorizado. Para o motor Flow: Node + Playwright.</p><pre><span class="c"># conferir</span>
 <span class="k">~/projetos/yt-pubx/yt-pubx</span> canais</pre></div>
   </div>
 </div></section>
@@ -197,7 +197,7 @@
 
   <div class="step"><div class="b">1</div><div>
     <h3>Responda as 6 perguntas</h3>
-    <p>Copie <code>temas/egito.yaml</code> e troque o tema. 60 s de duração total com cenas de 10 s dá 6 cenas.</p>
+    <p>Copie <code>temas/egito.yaml</code> e troque o tema. 60 s de duraçêo total com cenas de 10 s dá 6 cenas.</p>
 <pre><span class="k">slug</span>: egito-antigo
 <span class="k">tema</span>: <span class="s">"O Egito Antigo em um minuto: do Nilo às pirâmides..."</span>
 <span class="k">estilo</span>: <span class="s">"realistic cARCKHÉtic documentary, natural golden light"</span>
@@ -212,7 +212,7 @@
 
   <div class="step"><div class="b">2</div><div>
     <h3>Rode tudo de uma vez</h3>
-    <p>Roteiro, imagens, vídeos, narração e montagem. No exemplo levou cerca de 9 minutos.</p>
+    <p>Roteiro, imagens, vídeos, narraçêo e montagem. No exemplo levou cerca de 9 minutos.</p>
 <pre><span class="k">./docflow tudo</span> temas/egito.yaml  <span class="c"># → ~/projetos/output/docflow/egito-antigo/final.mp4</span></pre>
   </div></div>
 
@@ -225,13 +225,13 @@
 
   <div class="step"><div class="b">4</div><div>
     <h3>Veja o pacote do YouTube sem enviar</h3>
-    <p>Título, descrição (com o rodapé do projeto, das APIs usadas e do ARCKHÉ AI), tags e thumb. Nada sobe nesta etapa.</p>
+    <p>Título, descriçêo (com o rodapé do projeto, das APIs usadas e do ARCKHÉ AI), tags e thumb. Nada sobe nesta etapa.</p>
 <pre><span class="k">./docflow publicar</span> temas/egito.yaml  <span class="c"># dry-run</span></pre>
   </div></div>
 
   <div class="step"><div class="b">5</div><div>
     <h3>Publique</h3>
-    <p>Depois de assistir e aprovar a thumb, envie. Para corrigir a descrição de um vídeo que já está no ar, use <code>descricao --video</code>.</p>
+    <p>Depois de assistir e aprovar a thumb, envie. Para corrigir a descriçêo de um vídeo que já está no ar, use <code>descricao --video</code>.</p>
 <pre><span class="k">./docflow publicar</span> temas/egito.yaml --enviar
 <span class="k">./docflow descricao</span> temas/egito.yaml --video https://www.youtube.com/watch?v=...</pre>
   </div></div>
@@ -249,7 +249,7 @@
   <h2>Egito Antigo em um minuto</h2>
   <p class="sub">6 cenas, 55 s, voz <code>nei</code>, motor Agnes. Publicado em <a href="https://www.youtube.com/watch?v=TsVY4UUc5gI" target="_blank" rel="noopener">youtube.com/watch?v=TsVY4UUc5gI</a>.</p>
   <div class="ex">
-    <figure><img src="assets/ex1.jpg" alt="As seis imagens do vídeo do Egito, uma por cena" loading="lazy"><figcaption>As 6 imagens geradas pela API Agnes, uma por cena: Nilo, unificação, Gizé, Núbia, Abu Simbel e Alexandria.</figcaption></figure>
+    <figure><img src="assets/ex1.jpg" alt="As seis imagens do vídeo do Egito, uma por cena" loading="lazy"><figcaption>As 6 imagens geradas pela API Agnes, uma por cena: Nilo, unificaçêo, Gizé, Núbia, Abu Simbel e Alexandria.</figcaption></figure>
     <figure><img src="assets/ex2.jpg" alt="Thumb do vídeo com as pirâmides de Gizé" loading="lazy"><figcaption>A thumb que o yt-pubx montou a partir da cena 3 (<code>thumb_cena: 3</code>).</figcaption></figure>
   </div>
 </div></section>
@@ -257,9 +257,9 @@
 <section id="roadmap"><div class="wrap">
   <span class="chip">Roadmap</span>
   <h2>O que já existe e o que vem</h2>
-  <p class="sub">Versão 0.2.0.</p>
-  <div class="phase"><div class="tag">Feito</div><div class="d"><strong>Motor Agnes, montagem e publicação</strong><span>Vídeo de exemplo gerado, conferido e publicado; descrição com rodapé automático.</span></div></div>
-  <div class="phase"><div class="tag">Próximo</div><div class="d"><strong>Validar o motor Flow</strong><span>Primeiro login da conta Google e calibração dos botões do agente do Flow.</span></div></div>
+  <p class="sub">Versêo 0.2.0.</p>
+  <div class="phase"><div class="tag">Feito</div><div class="d"><strong>Motor Agnes, montagem e publicaçêo</strong><span>Vídeo de exemplo gerado, conferido e publicado; descriçêo com rodapé automático.</span></div></div>
+  <div class="phase"><div class="tag">Próximo</div><div class="d"><strong>Validar o motor Flow</strong><span>Primeiro login da conta Google e calibraçêo dos botões do agente do Flow.</span></div></div>
   <div class="phase"><div class="tag">Depois</div><div class="d"><strong>Voz e música pelo navegador</strong><span>AI Studio TTS e Flow Music como motores, pelo mesmo robô.</span></div></div>
   <div class="phase"><div class="tag">Planejado</div><div class="d"><strong>Caminho local</strong><span>flux2-klein para imagens e imagem com movimento para vídeo, sem API nenhuma.</span></div></div>
 </div></section>

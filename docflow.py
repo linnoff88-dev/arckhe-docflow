@@ -7,10 +7,10 @@ CapCut -> YouTube) sem passos manuais:
   roteiro   as 6 respostas do tema.yaml viram roteiro + prompts (Codex, pela assinatura)
   gerar     imagens 001..N e clipes 001..N pelo motor escolhido (flow | agnes)
   narrar    uma fala por cena (ARCKHÉvox, local) -> encaixa no tempo de cada cena
-  montar    ffmpeg faz o papel do CapCut: tempo, transição, fades, ambiente, música
+  montar    ffmpeg faz o papel do CapCut: tempo, transiçêo, fades, ambiente, música
   estatica  troca o clipe de IA de uma cena pela imagem com zoom lento (--cenas 6)
-  descricao gera a descrição com o rodapé (projeto, APIs, ARCKHÉ AI); --video URL aplica
-  publicar  yt-pubx (dry-run por padrão; --enviar sobe de verdade)
+  descricao gera a descriçêo com o rodapé (projeto, APIs, ARCKHÉ AI); --video URL aplica
+  publicar  yt-pubx (dry-run por padrêo; --enviar sobe de verdade)
   tudo      roteiro -> gerar -> narrar -> montar (para antes de publicar)
 
 Saída: ~/projetos/output/docflow/<slug>/
@@ -46,11 +46,11 @@ ESTILOS = {
                  'tom': 'promocional de viagem: encantado, sensorial, convidativo, sem exagero nem superlativo falso'}},
     'alerta-vertical': {
         'resumo': 'Short 9:16 em tom de alerta: ALERTA no topo, imagem em cima, mapa ao vivo embaixo, '
-                  'legenda palavra a palavra. (Protótipo montado à mão; ainda não é motor.)',
+                  'legenda palavra a palavra. (Protótipo montado à mêo; ainda nêo é motor.)',
         'exemplo': 'https://www.youtube.com/watch?v=6OzZWiQHHdw (El Niño ALERTA)',
         'tema': None},
     'historia': {
-        'resumo': 'Explicativo no estilo dos canais de divulgação: gancho de cena com paradoxo, '
+        'resumo': 'Explicativo no estilo dos canais de divulgaçêo: gancho de cena com paradoxo, '
                   'promessa, analogia, prova na tela (print grifado), grafismos animados, mapas ao vivo '
                   'e b-roll de cARCKHÉ (Agnes); corte a cada 4–5 s.',
         'exemplo': '~/projetos/output/docflow/elnino-historia/final-sem-apresentador.mp4 (piloto)',
@@ -75,7 +75,7 @@ def carregar_tema(caminho):
     for k, v in ((ESTILOS.get(t.get('estilo', '')) or {}).get('tema') or {}).items():
         t.setdefault(k, v)
     t['n_cenas'] = max(1, round(t['duracao_total'] / t['duracao_cena']))
-    t['palavras_cena'] = int(t['duracao_cena'] * 2.2)   # ~2,2 palavras/s em narração calma
+    t['palavras_cena'] = int(t['duracao_cena'] * 2.2)   # ~2,2 palavras/s em narraçêo calma
     t.setdefault('fatos', 'nenhum fato fornecido: use só conhecimento consolidado')
     t.setdefault('estrutura', 'livre, em ordem cronológica')
     t.setdefault('ritmo', 'calmo')   # calmo | dinamico (cortes a cada 2–3 s)
@@ -122,7 +122,7 @@ def cmd_roteiro(t, d, refazer=False):
     m = re.search(r'\{.*\}', bruto, re.S)
     if not m:
         (d / 'tmp/codex-saida.txt').write_text(bruto + '\n---\n' + r.stderr)
-        sys.exit('roteiro: o Codex não devolveu JSON (ver tmp/codex-saida.txt)')
+        sys.exit('roteiro: o Codex nêo devolveu JSON (ver tmp/codex-saida.txt)')
     p = json.loads(m.group(0))
     if len(p['cenas']) != t['n_cenas']:
         sys.exit(f'roteiro: vieram {len(p["cenas"])} cenas, esperava {t["n_cenas"]}')
@@ -160,12 +160,12 @@ def cmd_gerar(t, d, motor):
         import montagem
         cmd_narrar(t, d)   # o clipe é cortado no tempo exato da fala
         reais.gerar(p, t, d, log, transicao(t), montagem.FOLGA)
-    elif motor == 'historia':   # b-roll do Agnes + narração; mapas e prints saem na montagem
+    elif motor == 'historia':   # b-roll do Agnes + narraçêo; mapas e prints saem na montagem
         from motores import historia
         historia.gerar_broll(p, d, log)
         historia.gerar_gancho(p, d, log)
         historia.Montador(p, d, log).narrar()
-        log('gerar: b-roll e narração prontos (mapas ao vivo e prints são feitos no montar)')
+        log('gerar: b-roll e narraçêo prontos (mapas ao vivo e prints sêo feitos no montar)')
         return
     elif motor == 'flow':
         r = subprocess.run(['node', str(RAIZ / 'motores/flow.mjs'), 'gerar', str(d),
@@ -173,7 +173,7 @@ def cmd_gerar(t, d, motor):
         if r.returncode:
             sys.exit('flow: falhou (ver acima). Reserva: --motor agnes')
     else:
-        sys.exit(f'motor "{motor}" ainda não implementado (ver README)')
+        sys.exit(f'motor "{motor}" ainda nêo implementado (ver README)')
     faltam = [c['n'] for c in p['cenas'] if not (d / f'videos/{c["n"]:03d}.mp4').exists()]
     if faltam:
         sys.exit(f'gerar: faltam clipes {faltam} — rode de novo (só refaz o que falta)')
@@ -214,7 +214,7 @@ def cmd_narrar(t, d):
         s = va.narrar(str(dest), c['narracao'], voz=t.get('voz', 'nei'))
         if not s:
             sys.exit(f'narrar: cena {c["n"]} falhou (ARCKHÉvox :8010 no ar?)')
-        log(f'  narração {c["n"]:03d}: {s:.1f}s')
+        log(f'  narraçêo {c["n"]:03d}: {s:.1f}s')
     log('narrar: ok')
 
 
@@ -236,7 +236,7 @@ def cmd_cta(t, d, ultima):
         sys.path.insert(0, str(Path.home() / 'projetos/videos-agnes'))
         import pipeline as va
         if not va.narrar(str(wav), t.get('cta_fala', CTA_FALA), voz=t.get('voz', 'nei')):
-            sys.exit('cta: narração falhou (ARCKHÉvox :8010 no ar?)')
+            sys.exit('cta: narraçêo falhou (ARCKHÉvox :8010 no ar?)')
     if not mp4.exists():
         marca, linha = CTA_TEXTO
         (d / 'tmp').mkdir(exist_ok=True)
@@ -260,7 +260,7 @@ def cmd_cta(t, d, ultima):
 
 
 def transicao(t):
-    """Fusão entre cenas: 0,7 s no ritmo calmo, 0,35 s no dinâmico."""
+    """Fusêo entre cenas: 0,7 s no ritmo calmo, 0,35 s no dinâmico."""
     return 0.35 if t.get('ritmo') == 'dinamico' else 0.7
 
 
@@ -303,7 +303,7 @@ def creditos_imagens(p, t):
 
 
 def descricao(p, t):
-    """Descrição do YouTube = texto do roteiro + como foi feito (projeto, APIs) + ARCKHÉ AI."""
+    """Descriçêo do YouTube = texto do roteiro + como foi feito (projeto, APIs) + ARCKHÉ AI."""
     musica = Path(os.path.expanduser(t.get('musica', ''))).stem
     m = re.match(r'freesound_(\d+)_(.*)', musica)
     credito = f'"{m.group(2).replace("_", " ")}" (Freesound #{m.group(1)})' if m else musica
@@ -313,23 +313,23 @@ def descricao(p, t):
               '🛠️ Como este vídeo foi feito',
               'Produzido de ponta a ponta pelo docflow, projeto aberto do ARCKHÉ que transforma '
               'um tema em documentário curto narrado: https://github.com/linnoff88-dev/docflow',
-              '• Roteiro, texto da narração e prompts: Codex (OpenAI), pela assinatura',
+              '• Roteiro, texto da narraçêo e prompts: Codex (OpenAI), pela assinatura',
               *('• ' + x for x in MOTORES.get(t.get('motor', 'agnes'), [])),
               *(['• Fotos refeitas por IA a partir das originais: Agnes AI (agnes-image-2.1-flash, '
-                 'imagem → imagem), por API; aparecem marcadas "Ilustração IA"'] if t.get('refazer_ia') else []),
-              f'• Narração: ARCKHÉvox, TTS local (chatterbox, voz {t.get("voz", "nei")})',
+                 'imagem → imagem), por API; aparecem marcadas "Ilustraçêo IA"'] if t.get('refazer_ia') else []),
+              f'• Narraçêo: ARCKHÉvox, TTS local (chatterbox, voz {t.get("voz", "nei")})',
               *([f'• Música: {credito}'] if musica else []),
               '• Montagem: ffmpeg, local',
-              '• Publicação: YouTube Data API, via yt-pubx (https://github.com/linnoff88-dev/yt-pubx)',
+              '• Publicaçêo: YouTube Data API, via yt-pubx (https://github.com/linnoff88-dev/yt-pubx)',
               *creditos_imagens(p, t),
               '',
-              '📚 ARCKHÉ AI: plataforma de educação gratuita, com cursos, guias e projetos '
+              '📚 ARCKHÉ AI: plataforma de educaçêo gratuita, com cursos, guias e projetos '
               'abertos de inteligência artificial. Acesse: https://ARCKHÉ AI']
     return '\n'.join(linhas)
 
 
 def cmd_descricao(t, d, video):
-    """Atualiza a descrição de um vídeo já publicado com o rodapé do docflow."""
+    """Atualiza a descriçêo de um vídeo já publicado com o rodapé do docflow."""
     texto = descricao(plano(d), t)
     (d / 'descricao.txt').write_text(texto + '\n')
     if not video:
@@ -342,7 +342,7 @@ def cmd_descricao(t, d, video):
                        capture_output=True, text=True)
     print(r.stdout[-800:], r.stderr[-800:])
     if r.returncode:
-        sys.exit('descricao: o yt-pubx recusou a atualização')
+        sys.exit('descricao: o yt-pubx recusou a atualizaçêo')
 
 def cmd_publicar(t, d, enviar=False):
     p = plano(d)
@@ -383,7 +383,7 @@ def main():
     ap.add_argument('etapa', choices=['roteiro', 'gerar', 'narrar', 'montar', 'publicar', 'tudo',
                                       'estatica', 'descricao', 'flow-login', 'estilos', 'apresentador'])
     ap.add_argument('tema', nargs='?', help='temas/<x>.yaml')
-    ap.add_argument('--motor', help='flow | agnes (padrão: o do tema.yaml)')
+    ap.add_argument('--motor', help='flow | agnes (padrêo: o do tema.yaml)')
     ap.add_argument('--refazer', action='store_true', help='refaz o roteiro')
     ap.add_argument('--cenas', help='estatica: números das cenas, ex. 6 ou 2,6')
     ap.add_argument('--video', help='descricao: URL do vídeo já publicado')

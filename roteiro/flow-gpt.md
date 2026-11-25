@@ -4,12 +4,12 @@ Recebe as 6 respostas abaixo e devolve TUDO de uma vez, sem perguntar nada.
 ## As 6 respostas
 1. Tema: {tema}
 2. Estilo visual: {estilo}
-3. Duração total: {duracao_total} segundos
-4. Duração de cada cena: {duracao_cena} segundos  (=> {n_cenas} cenas)
-5. Formato e idioma: {formato}, narração em {idioma}
+3. Duraçêo total: {duracao_total} segundos
+4. Duraçêo de cada cena: {duracao_cena} segundos  (=> {n_cenas} cenas)
+5. Formato e idioma: {formato}, narraçêo em {idioma}
 6. Referências (personagem/cenário): {referencias}
 
-## Fatos (use SOMENTE estes números, datas e orientações; não invente nada além)
+## Fatos (use SOMENTE estes números, datas e orientações; nêo invente nada além)
 {fatos}
 
 ## Estrutura das cenas (siga esta ordem)
@@ -17,14 +17,14 @@ Recebe as 6 respostas abaixo e devolve TUDO de uma vez, sem perguntar nada.
 
 ## Regras
 - Exatamente {n_cenas} cenas, na ordem da estrutura, cada uma com UMA ideia.
-- Narração de cada cena em {idioma}, para ser lida em voz alta em no máximo {duracao_cena} segundos
+- Narraçêo de cada cena em {idioma}, para ser lida em voz alta em no máximo {duracao_cena} segundos
   (no máximo {palavras_cena} palavras por cena). Números e datas POR EXTENSO
   ("mil novecentos e trinta e nove", "três mil anos"), sem siglas, sem parênteses.
-- Fatos corretos e conservadores; nada de exagero inventado. Previsão é previsão: diga "deve", "pode", "a previsão indica", nunca como fato consumado.
+- Fatos corretos e conservadores; nada de exagero inventado. Previsêo é previsêo: diga "deve", "pode", "a previsêo indica", nunca como fato consumado.
 - prompt_imagem e prompt_video em INGLÊS (o gerador recusa português).
-  prompt_imagem: um quadro fixo, {estilo}, composição cARCKHÉtográfica {formato}, sem texto escrito,
+  prompt_imagem: um quadro fixo, {estilo}, composiçêo cARCKHÉtográfica {formato}, sem texto escrito,
   sem logotipos, sem rostos de pessoas reais famosas em close; nada de violência gráfica.
-  prompt_video: só o MOVIMENTO a partir daquela imagem (câmera + ação sutil), uma frase.
+  prompt_video: só o MOVIMENTO a partir daquela imagem (câmera + açêo sutil), uma frase.
 - direcao_voz: uma linha (gênero, ritmo, tom).
 - prompt_musica: uma linha em inglês para gerar trilha instrumental que combine.
 - youtube: titulo (até 70 caracteres, em {idioma}), descricao (3 a 5 linhas), tags (8 a 12).

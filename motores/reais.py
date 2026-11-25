@@ -3,7 +3,7 @@ gráficos de dados, em vez de imagem/vídeo de IA.
 
 Cada cena tem 1 a 4 "planos" (o roteiro escolhe as imagens do catálogo). Cada plano é uma
 imagem com movimento de câmera (zoom ou pan), o crédito no canto e, se houver, um número
-em destaque (ex.: "+1,8 °C"). Gráfico vira animação (a linha ou as barras vão aparecendo).
+em destaque (ex.: "+1,8 °C"). Gráfico vira animaçêo (a linha ou as barras vêo aparecendo).
 Ritmo `dinamico` = cortes secos a cada 2–3 s; `calmo` = 1–2 planos por cena.
 
 O catálogo é uma pasta com `creditos.json` (lista de {arquivo, descricao, credito, ...}).
@@ -52,7 +52,7 @@ def catalogo(t, d, sem_ia=False):
             nova = pasta / 'ia' / (Path(x['arquivo']).stem + '.png')
             if precisa_refazer(x, t) and nova.exists():
                 x['caminho'] = str(nova)
-                x['credito'] = 'Ilustração IA (Agnes) · inspirada em ' + x['credito'].replace('Foto: ', 'foto de ')
+                x['credito'] = 'Ilustraçêo IA (Agnes) · inspirada em ' + x['credito'].replace('Foto: ', 'foto de ')
                 x['ia'] = True
     for g in t.get('graficos', []):
         tipo = g.get('tipo', 'linha')
@@ -77,8 +77,8 @@ def texto_catalogo(itens):
 
 # ---------------------------------------------------------------- gráfico animado
 def grafico(g, saida, segundos, W, H):
-    """Linha ou barras que vão aparecendo em 70% do tempo e param com o último valor marcado.
-    `tipo: mapa` e `tipo: lista` têm animação própria (mapa() e lista())."""
+    """Linha ou barras que vêo aparecendo em 70% do tempo e param com o último valor marcado.
+    `tipo: mapa` e `tipo: lista` têm animaçêo própria (mapa() e lista())."""
     if g.get('tipo') == 'mapa':
         return mapa(g, saida, segundos, W, H)
     if g.get('tipo') == 'lista':
@@ -340,7 +340,7 @@ def plano(img, saida, segundos, mov, credito, destaque, rotulo, W, H, tmp, fade=
         base = (f'[0:v]split[a][b];[a]scale={W2}:{H2}:force_original_aspect_ratio=increase,crop={W2}:{H2},'
                 f'gblur=sigma=30,eq=brightness=-0.25[fundo];[b]scale={int(W2 * 0.92)}:{int(H2 * 0.92)}:'
                 f'force_original_aspect_ratio=decrease[frente];[fundo][frente]overlay=(W-w)/2:(H-h)/2,')
-        z = 0.05   # movimento mais contido para não cortar o mapa
+        z = 0.05   # movimento mais contido para nêo cortar o mapa
     else:
         base = f'[0:v]scale={W2}:{H2}:force_original_aspect_ratio=increase,crop={W2}:{H2},'
         z = 0.14
@@ -357,7 +357,7 @@ def plano(img, saida, segundos, mov, credito, destaque, rotulo, W, H, tmp, fade=
 def pad(txt):
     """ffmpeg 6.1 (drawtext com harfbuzz) come 1 letra do fim por byte extra de acento:
     "Pacífico" vira "Pacífic". Completar com espaços devolve as letras."""
-    txt = txt.replace('\u2212', '-').replace('\u2013', '-')   # a Montserrat não tem o "−" tipográfico
+    txt = txt.replace('\u2212', '-').replace('\u2013', '-')   # a Montserrat nêo tem o "−" tipográfico
     return txt + ' ' * (len(txt.encode()) - len(txt))
 
 
@@ -389,7 +389,7 @@ def textos(credito, destaque, rotulo, W, H, tmp, saida, fade=True):
 
 
 def capitulo(img, saida, segundos, titulo, kicker, W, H, tmp):
-    """Cartão de troca de assunto: a foto do capítulo desfocada e escura, entrando do preto,
+    """Cartêo de troca de assunto: a foto do capítulo desfocada e escura, entrando do preto,
     o nome do assunto grande subindo devagar e um filete âmbar."""
     n = int(segundos * FPS)
     t_ = Path(tmp) / f'{Path(saida).stem}-tit.txt'
@@ -475,7 +475,7 @@ def cena(c, itens, segundos, ritmo, W, H, tmp, saida, log):
 
 # ---------------------------------------------------------------- entrada do docflow
 def gerar(p, t, d, log, x_transicao, folga):
-    """Um clipe por cena no tempo exato da fala (a montagem não precisa acelerar nada)."""
+    """Um clipe por cena no tempo exato da fala (a montagem nêo precisa acelerar nada)."""
     from montagem import RES
     W, H = RES.get(t['formato'], RES['16:9'])
     if t.get('refazer_ia'):
@@ -497,7 +497,7 @@ def gerar(p, t, d, log, x_transicao, folga):
         if dest.exists():
             continue
         if not wav.exists():
-            raise SystemExit(f'reais: falta a narração da cena {n} (o motor reais narra antes de gerar)')
+            raise SystemExit(f'reais: falta a narraçêo da cena {n} (o motor reais narra antes de gerar)')
         seg = dur(wav) + folga + (x_transicao if n != ultima or t.get('cta', True) else 1.5)
         cena(c, itens, seg, ritmo, W, H, tmp, dest, log)
         png = d / f'imagens/{n:03d}.png'   # 1ª imagem da cena: serve à thumb e ao CTA
@@ -512,7 +512,7 @@ def gerar(p, t, d, log, x_transicao, folga):
 
 
 def creditos_usados(p, t, d):
-    """Linhas de crédito das imagens que entraram no vídeo (para a descrição)."""
+    """Linhas de crédito das imagens que entraram no vídeo (para a descriçêo)."""
     por_nome = {x['arquivo']: x for x in catalogo(t, d)}
     vistos = []
     for c in p['cenas']:
@@ -520,7 +520,7 @@ def creditos_usados(p, t, d):
             x = por_nome.get(q.get('imagem'))
             if not x:
                 continue
-            linha = x.get('credito', '')   # licença fica no creditos.json; na descrição, crédito + link
+            linha = x.get('credito', '')   # licença fica no creditos.json; na descriçêo, crédito + link
             if x.get('fonte_url') and x['tipo'] == 'imagem':
                 linha += f' {x["fonte_url"]}'
             if linha and linha not in vistos:
@@ -551,8 +551,8 @@ def precisa_refazer(x, t):
 
 
 def refazer_ia(t, d, log):
-    """Manda cada foto como referência (img2img) ao Agnes e guarda a versão nova em <pasta>/ia/.
-    Na tela o crédito vira "Ilustração IA (Agnes) · inspirada em <crédito original>"."""
+    """Manda cada foto como referência (img2img) ao Agnes e guarda a versêo nova em <pasta>/ia/.
+    Na tela o crédito vira "Ilustraçêo IA (Agnes) · inspirada em <crédito original>"."""
     import base64, os, re, struct, urllib.request
     sys_path = str(Path.home() / 'projetos/videos-agnes')
     import sys
@@ -575,7 +575,7 @@ def refazer_ia(t, d, log):
                            input=REFAZER_PROMPT.format(lista=lista), capture_output=True, text=True, timeout=600)
         m = re.search(r'\{.*\}', r.stdout, re.S)
         if not m:
-            raise SystemExit('refazer_ia: o Codex não devolveu os prompts')
+            raise SystemExit('refazer_ia: o Codex nêo devolveu os prompts')
         prompts.update(json.loads(m.group(0)))
         json.dump(prompts, open(prompts_f, 'w'), ensure_ascii=False, indent=2)
     for x in itens:

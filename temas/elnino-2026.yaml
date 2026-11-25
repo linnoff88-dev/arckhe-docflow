@@ -10,8 +10,8 @@ referencias: "nenhuma (sem personagem fixo); paisagens e cidades brasileiras"
 fatos: |
   - Fontes: NOAA/CPC (EUA), INPE, Inmet, OMM e Defesa Civil. Pesquisado em 7 de outubro de 2026.
   - O El Niño está ativo agora: o Pacífico equatorial aquecido muda a chuva e a temperatura no mundo todo.
-  - Em agosto, a região Niño 3.4 já estava 1,8 °C acima da média.
-  - A NOAA dá mais de 90% de chance de um El Niño "muito forte" e 75% de chance de ser o mais forte desde 1950 no trimestre outubro-novembro-dezembro. É previsão, não recorde confirmado.
+  - Em agosto, a regiêo Niño 3.4 já estava 1,8 °C acima da média.
+  - A NOAA dá mais de 90% de chance de um El Niño "muito forte" e 75% de chance de ser o mais forte desde 1950 no trimestre outubro-novembro-dezembro. É previsêo, nêo recorde confirmado.
   - O pico mais provável é entre novembro e dezembro de 2026 (OMM); o INPE estima 95% de chance de o ápice ser no último trimestre e de o fenômeno seguir ativo até o começo de 2027.
   - Temperatura acima do normal em praticamente todo o país: mais ondas de calor.
   - Norte, Nordeste e boa parte do Centro-Oeste: chuva abaixo da média, seca, rios mais baixos.
@@ -20,20 +20,20 @@ fatos: |
   - Em julho, chuvas no Rio Grande do Sul já afetaram mais de 84 mil pessoas em 171 municípios. Santa Catarina decretou estado de alerta climático.
   - Preparar-se: mandar o CEP por SMS para 40199 (alerta gratuito da Defesa Civil); limpar calhas e revisar telhado; nunca atravessar água — 30 centímetros já arrastam um carro; em enchente, desligar a energia e buscar lugar alto; rachadura no muro ou poste inclinado: sair e ligar 193 ou 199.
   - Calor: evitar sol das 10 às 16 horas, beber água mesmo sem sede, cuidar de idosos, crianças e animais.
-  - Fogo e seca: não fazer queimadas nem fogueiras, não jogar bituca de cigarro, economizar água.
-fontes: "NOAA/Climate Prediction Center (discussão ENSO de 10/09/2026 e atualização de 05/10/2026), INPE (Painel El Niño 2026–2027), Inmet, OMM e Defesa Civil (alertas pelo SMS 40199). Previsões sujeitas a revisão; pesquisa feita em 7/10/2026."
+  - Fogo e seca: nêo fazer queimadas nem fogueiras, nêo jogar bituca de cigarro, economizar água.
+fontes: "NOAA/Climate Prediction Center (discussêo ENSO de 10/09/2026 e atualizaçêo de 05/10/2026), INPE (Painel El Niño 2026–2027), Inmet, OMM e Defesa Civil (alertas pelo SMS 40199). Previsões sujeitas a revisêo; pesquisa feita em 7/10/2026."
 estrutura: |
   1. Gancho: está acontecendo agora, o Pacífico esquentou e o pico deve vir em dezembro.
-  2. A força: previsão de El Niño muito forte, talvez o mais forte desde 1950 (é previsão).
+  2. A força: previsêo de El Niño muito forte, talvez o mais forte desde 1950 (é previsêo).
   3. Calor acima do normal no país todo: ondas de calor.
   4. Seca no Norte, Nordeste e Centro-Oeste: rios baixos, falta de chuva.
   5. Fogo: risco alto de queimadas na Amazônia, no Cerrado e no Pantanal.
   6. Temporais no Sul: vendaval, granizo, chuva acima da média.
   7. Enchentes e deslizamentos: o Rio Grande do Sul já sentiu em julho.
   8. Como se preparar para chuva e enchente: SMS 40199 com o CEP, calhas, nunca atravessar água.
-  9. Como se preparar para calor e fogo, e fechamento: informação e prevenção salvam vidas.
+  9. Como se preparar para calor e fogo, e fechamento: informaçêo e prevençêo salvam vidas.
 
-# Execução
+# Execuçêo
 motor: agnes
 voz: nei
 musica: ~/projetos/ARCKHÉvox/jobs/audio_library/music/freesound_595385_Star_walk_-_CARCKHÉtic_Atmo_Amb_Fantasy_S.mp3

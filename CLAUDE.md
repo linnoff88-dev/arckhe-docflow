@@ -4,7 +4,7 @@ Tema → documentário curto narrado → YouTube. Plano, tabela dos 3 caminhos e
 
 - Saída sempre em `~/projetos/output/docflow/<slug>/`; o repo só tem código e temas.
 - Motor `flow` = Google Flow pelo navegador (conta linnoff88-dev). Login é do Nei (VNC :5900), nunca do agente.
-- API Agnes autorizada (07/10/2026). Kie/Gemini/outras APIs: só com autorização explícita.
+- API Agnes autorizada (07/10/2026). Kie/Gemini/outras APIs: só com autorizaçêo explícita.
 - Publicar no YouTube só com `publicar --enviar` depois de o Nei aprovar vídeo e thumb.
 - Commits: autor `linnoff88-dev <linnoff88-dev@gmail.com>`.
 
