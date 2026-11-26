@@ -1,7 +1,7 @@
 // Motor Flow — dirige o Google Flow (labs.google/flow) no navegador, como o vídeo fazia à mão.
 //
 // STATUS: NÃO VALIDADO. A tela do Flow nunca foi aberta por este robô (falta o login da
-// conta inematds no perfil abaixo). Os seletores são por TEXTO visível, com alternativas
+// conta linnoff88-dev no perfil abaixo). Os seletores são por TEXTO visível, com alternativas
 // PT/EN, e cada passo salva um print em <saida>/tmp/flow-*.png. O 1º uso real calibra.
 //
 //   node motores/flow.mjs login                 abre o Chromium; o Nei loga pelo VNC (:5900)
@@ -86,7 +86,7 @@ async function login() {
   const page = ctx.pages()[0] || (await ctx.newPage());
   await page.goto(URL_FLOW);
   console.log(`Chromium aberto no display ${DISPLAY} (perfil ${PERFIL}).`);
-  console.log('Abra o VNC em localhost:5900, entre com a conta inematds e aceite os termos do Flow.');
+  console.log('Abra o VNC em localhost:5900, entre com a conta linnoff88-dev e aceite os termos do Flow.');
   console.log('Esperando até 20 min a tela do Flow aparecer logada...');
   const fim = Date.now() + 20 * MIN;
   while (Date.now() < fim) {
